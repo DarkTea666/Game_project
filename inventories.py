@@ -90,3 +90,5 @@ class InventoryLayer(Layer, Observer):
                             #TO DO: make normal text pixelated
 
 
+
+

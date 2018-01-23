@@ -38,3 +38,16 @@ class ItemMenuLayer(Layer):
                 self.add(button_text)
                 self.item_buttons.append((button, y))
                 y -= 40
+
+    def on_mouse_press(self,x,y,buttons,modifiers):
+        non_press = True
+        for button in self.item_buttons:
+            name, y_b = button
+            if 425<=x<=425+11.1*len(name) and y_b<=y<=y_b+10:
+                for button_name, button_func in self.item.buttons.items():
+                    if button_name == name:
+                        the_func = partial(button_func, self.parent)
+                        the_func()
+                        non_press = False
+        if non_press:
+            pass
