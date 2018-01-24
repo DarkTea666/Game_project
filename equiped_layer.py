@@ -8,7 +8,6 @@ class EquipedLayer(Layer):
     is_event_handler = True
     def __init__(self):
         Layer.__init__(self)
-        self.player = False
         self.equipment_dict = {'weapon':[False,Sprite('Sprites/Weapon_empty_slot.png'),760],
                                'armour':[False,Sprite('Sprites/Armour_empty_slot.png'),680],
                                'long_range_1':[False,Sprite('Sprites/Ranged_empty_slot.png'),600],
@@ -38,7 +37,7 @@ class EquipedLayer(Layer):
                 blank.scale = 0.075
                 if space[0] == False:
                     inv_layer.remove(item)
-                    space[0] = item
+                    space[0] = (item, item.buttons)
                     self.remove(space[1])
                     blank.position = 1200, space[2]
                     item.scale = 0.075
@@ -53,18 +52,19 @@ class EquipedLayer(Layer):
     def on_mouse_press(self,x,y,buttons,modifiers):
         not_press = True
         for name, space in self.equipment_dict.items():
-            if x>1200-37.5 and x<1200+37.5 and y>space[2]-37.5 and y<space[2]+37.5:
+            if 1200+37.5>=x>=1200-37.5 and space[2]+37.5>=y>=space[2]-37.5:
                 self.selecter.position = 1200, space[2]
                 self.selecter.scale = 0.075
                 self.selecter.opacity = 255
                 self.add(self.selecter)
                 the_item = space[0]
                 not_press = False
-                self.add(ItemMenuLayer(the_item, from_equiped_layer = False))
+                self.add(ItemMenuLayer(the_item, from_equiped_layer = True))
         if not_press:
             self.selecter.opacity = 0
-
-
+        #|========================================================|
+        #| TO DO: IS STILL VERY WIERD WITH SOMETIMES. BUGFIX THIS |
+        #|========================================================|
 
 
 

@@ -7,7 +7,7 @@ from functools import partial
 
 class ItemMenuLayer(Layer):
     is_event_handler = True
-    def __init__(self,the_item, from_equiped_layer = False):
+    def __init__(self, the_item, from_equiped_layer = False):
         Layer.__init__(self)
 
         self.item = the_item[0]
@@ -46,8 +46,7 @@ class ItemMenuLayer(Layer):
             if 425<=x<=425+11.1*len(name) and y_b<=y<=y_b+10:
                 for button_name, button_func in self.item.buttons.items():
                     if button_name == name:
-                        the_func = partial(button_func, self.parent)
-                        the_func()
+                        button_func()
                         non_press = False
         if non_press:
-            pass
+            self.parent.remove(self)

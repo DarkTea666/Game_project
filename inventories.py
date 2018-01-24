@@ -59,6 +59,7 @@ class InventoryLayer(Layer, Observer):
                         item.inv_place = (c-1, len(that_inv_list[row])-1)
                         self.add(item)
                         it_key = True
+                        item.inv_layer = self
         return it_key
 
     def on_mouse_press(self,x,y,buttons,modifiers):
@@ -88,7 +89,5 @@ class InventoryLayer(Layer, Observer):
                         item_inv = ItemMenuLayer(the_item)
                         self.add(item_inv)
                             #TO DO: make normal text pixelated
-
-
 
 

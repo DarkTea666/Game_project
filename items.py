@@ -14,7 +14,10 @@ class Item(Sprite):
         self.equip_type = False
         self.menu = menu
 
-    def Drop(self, inv_layer):
+        self.inv_layer = False
+
+    def Drop(self):
+        inv_layer = self.inv_layer
         for name, inv in inv_layer.dict_inv.items():
             for row in inv[0]:
                 for item_inf in row:
@@ -32,7 +35,8 @@ class Item(Sprite):
         print(self.tile)
         interact_layer.add(self)
 
-    def Equip(self, inv_layer):
+    def Equip(self):
+        inv_layer = self.inv_layer
         for name, inv in inv_layer.dict_inv.items():
             for row in inv[0]:
                 for item_inf in row:
@@ -42,9 +46,12 @@ class Item(Sprite):
         inv_layer.equip_layer.equip_item(self,inv_layer)
         removing_list[0][removing_list[1]].remove(item_inf)
 
-    def Unequip(self, inv_layer):
+    def Unequip(self):
+        inv_layer = self.inv_layer
+        self.scale = 0.05
         if not inv_layer.add_to_inventory(self):
             print('the inventory of that type is full')
+        print(inv_layer.weapons_inv)
 
 class Weapon(Item):
     def __init__(self,weapon_stats, tile, enchantment = False, level = 1):
@@ -84,7 +91,8 @@ class Sceptre(Item):
         self.ammo = sceptre_stats.max_ammo
         self.strike_effect = sceptre_stats.strike_effect
 
-    def Recharge(self, inv_layer):
+    def Recharge(self):
+        inv_layer = self.inv_layer
         class_dict = inv_layer.play_layer.player.class_dict
         if 'mana' in class_dict:
             if class_dict['mana'] >= self.max_ammo*50:
@@ -119,12 +127,6 @@ class Ring(Item):
 
         self.inv_type = 'jewellery'
         self.level = level
-
-
-    #functions: on_equp: +all added stats
-    #           on_unequp: -all added stats
         
 #artefacts are items, created individually
-
-
-
+#-----------------------------UNLESS I FIX A PROBLEM WITH EVENTS, NO ITEMS CAN BE PRE-EQUIPPED---------------------
