@@ -34,6 +34,20 @@ class InteractableLayer(Layer, Observer):#holds items, doors, chests, crates(ex:
         sword3.position = ((x + 1) * 50, (len(self.map_layer.map) - y) * 50)
         self.add(sword3)
 
+        sword3 = items.Weapon(starting_stats.Long_sword, (6, 10))
+        self.items.append(sword3)
+        y, x = sword3.tile
+        sword3.scale = 0.05
+        sword3.position = ((x + 1) * 50, (len(self.map_layer.map) - y) * 50)
+        self.add(sword3)
+
+        sword3 = items.Weapon(starting_stats.Short_sword, (5, 10))
+        self.items.append(sword3)
+        y, x = sword3.tile
+        sword3.scale = 0.05
+        sword3.position = ((x + 1) * 50, (len(self.map_layer.map) - y) * 50)
+        self.add(sword3)
+
 
 
 

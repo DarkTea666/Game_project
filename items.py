@@ -20,13 +20,14 @@ class Item(Sprite):
         inv_layer = self.inv_layer
         for name, inv in inv_layer.dict_inv.items():
             for row in inv[0]:
-                for item_inf in row:
-                    if item_inf[0] == self:
-                        removing_list = (inv[0], inv[0].index(row), item_inf)
+                for item_num in range(0,3):
+                    item_inf = row[item_num]
+                    if item_inf != False and item_inf[0] == self:
+                        remove_that = (inv[0], inv[0].index(row), item_num)
                         break
         interact_layer = inv_layer.interactive_layer
         inv_layer.remove(self)
-        removing_list[0][removing_list[1]].remove(item_inf)
+        remove_that[0][remove_that[1]][remove_that[2]] = False
         interact_layer.items.append(self)
         self.position = (inv_layer.play_layer.player.race_sprite.position)
         self.scale = 0.05
@@ -39,19 +40,30 @@ class Item(Sprite):
         inv_layer = self.inv_layer
         for name, inv in inv_layer.dict_inv.items():
             for row in inv[0]:
-                for item_inf in row:
-                    if item_inf[0] == self:
-                        removing_list = (inv[0], inv[0].index(row), item_inf)
+                for item_num in range(0,3):
+                    item_inf = row[item_num]
+                    if item_inf != False and item_inf[0] == self:
+                        remove_that = (inv[0], inv[0].index(row), item_num)
                         break
         inv_layer.equip_layer.equip_item(self,inv_layer)
-        removing_list[0][removing_list[1]].remove(item_inf)
+        remove_that[0][remove_that[1]][remove_that[2]] = False
 
     def Unequip(self):
         inv_layer = self.inv_layer
         self.scale = 0.05
-        if not inv_layer.add_to_inventory(self):
+        remove_name = False
+        inv_layer.equip_layer.remove(self)
+
+        if inv_layer.add_to_inventory(self):
+            for name, item_space in inv_layer.equip_layer.equipment_dict.items():
+                if item_space[0] != False and item_space[0][0] == self:
+                    remove_name = name
+                    inv_layer.equip_layer.add(item_space[1])
+            if remove_name != False:
+                inv_layer.equip_layer.equipment_dict[remove_name][0] = False
+        else:
             print('the inventory of that type is full')
-        print(inv_layer.weapons_inv)
+
 
 class Weapon(Item):
     def __init__(self,weapon_stats, tile, enchantment = False, level = 1):
@@ -81,7 +93,7 @@ class Sceptre(Item):
                       tile,
                       sceptre_stats.menu,
                       {'Drop':self.Drop, 'Equip':self.Equip, 'Unequip':self.Unequip, 'Recharge':self.Recharge})
-        self.inv_type = 'weapons'
+        self.inv_type = 'all'
         self.equip_type = 'long_range'
         self.level = level
 
@@ -98,6 +110,10 @@ class Sceptre(Item):
             if class_dict['mana'] >= self.max_ammo*50:
                 class_dict['mana'] -= self.max_ammo*50
                 self.ammo = self.max_ammo
+
+    def Shoot(self):
+        inv_layer = self.inv_layer
+        
 
 class Armour(Item):
     def __init__(self, armour_stats, tile, imbued=False, level=1):

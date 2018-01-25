@@ -31,10 +31,10 @@ class InventoryLayer(Layer, Observer):
         self.selecter.opacity = 0
         self.add(self.selecter)
         
-        self.weapons_inv = [[] for x in range(4)]
-        self.alchemy_inv = [[] for x in range(4)]
-        self.scrolls_inv = [[] for x in range(4)]
-        self.all_inv = [[] for x in range(4)]
+        self.weapons_inv = [[False for i in range(4)] for x in range(4)]
+        self.alchemy_inv = [[False for i in range(4)] for x in range(4)]
+        self.scrolls_inv = [[False for i in range(4)] for x in range(4)]
+        self.all_inv = [[False for i in range(4)] for x in range(4)]
 
         self.dict_inv = {'weapons':(self.weapons_inv, 350, 275),
                          'alchemy':(self.alchemy_inv, 350, 675),
@@ -51,15 +51,16 @@ class InventoryLayer(Layer, Observer):
                 that_inv_list = inv_list[0]
                 for row in range(0,4):
                     c += 1
-                    row_length = len(that_inv_list[row])
-                    if row_length<4 and not it_key:
-                        func_dict = {name:partial(item.buttons[name],self) for name in item.buttons}
-                        that_inv_list[row].append((item, func_dict))
-                        item.position = x+row_length*50, y-row*50
-                        item.inv_place = (c-1, len(that_inv_list[row])-1)
-                        self.add(item)
-                        it_key = True
-                        item.inv_layer = self
+                    for place in range(0,4):
+                        if that_inv_list[row][place] == False and not it_key:
+                            func_dict = {name:partial(item.buttons[name],self) for name in item.buttons}
+                            that_inv_list[row][place] = (item, func_dict)
+                            item.position = x+place*50, y-row*50
+                            item.inv_place = (c-1, len(that_inv_list[row])-1)
+                            self.add(item)
+                            it_key = True
+                            item.inv_layer = self
+                            break
         return it_key
 
     def on_mouse_press(self,x,y,buttons,modifiers):
@@ -84,7 +85,7 @@ class InventoryLayer(Layer, Observer):
         for inv_name, inv_list in self.dict_inv.items():
             for row in range(0,4):
                 for the_item in inv_list[0][row]:
-                    if self.selecter.opacity == 255 and\
+                    if the_item != False and self.selecter.opacity == 255 and\
                     the_item[0].position == self.selecter.position:
                         item_inv = ItemMenuLayer(the_item)
                         self.add(item_inv)

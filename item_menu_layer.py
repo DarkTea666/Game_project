@@ -25,15 +25,15 @@ class ItemMenuLayer(Layer):
 
         y = 500 - 20*len(self.description)-20
         for button in self.item.buttons:
-            not_key = 'Unequip'
+            not_key = ('Unequip')
             if from_equiped_layer == True:
-                not_key = 'Equip'
-            if button != not_key:
+                not_key = ('Equip', 'Drop')
+            if button not in not_key:
                 button_text = RichLabel(button, (425, y), bold = True, font_size = 14)
                 background = Sprite('Sprites/Button_background.png')
                 background.scale_x = len(button)
                 background.position = 425 + 11.1*len(button)/2, y+5
-                self.y0= y-20
+                self.y0 = y-20
                 self.add(background)
                 self.add(button_text)
                 self.item_buttons.append((button, y))
@@ -47,6 +47,8 @@ class ItemMenuLayer(Layer):
                 for button_name, button_func in self.item.buttons.items():
                     if button_name == name:
                         button_func()
+                        self.parent.remove(self)
                         non_press = False
+
         if non_press:
             self.parent.remove(self)

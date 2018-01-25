@@ -169,7 +169,7 @@ class PlayingLayer(layer.Layer, EventDispatcher, Observer):
             if not self.inv_open:
                 self.inv_open = True
                 self.handling_moves = False
-                self.parent.add(self.player.inventory)
+                self.parent.add(self.player.inventory, z = 5)
                 inventory_layer.handling_events = True
             elif self.inv_open:
                 self.inv_open = False
@@ -222,25 +222,18 @@ if __name__=="__main__":
     play_layer.spawn_initial_mobs()
     play_layer.spawn_items()
 
-    main_scene = scene.Scene(map_layer,
-                             interactive_layer,
-                             play_layer,
-                             effect_layer,
-                             visibility_layer,
-                             inventory_layer,
-                             equip_layer)
-    #not pretty, but works
-    main_scene.remove(inventory_layer)
-    main_scene.remove(interactive_layer)
-    main_scene.add(interactive_layer)
-    main_scene.remove(play_layer)
-    main_scene.add(play_layer)
-    main_scene.remove(effect_layer)
-    main_scene.add(effect_layer)
-    main_scene.remove(visibility_layer)
-    main_scene.add(visibility_layer)
+    main_scene = scene.Scene()
+    main_scene.add(map_layer, z = 0)
+    main_scene.add(interactive_layer, z = 1)
+    main_scene.add(play_layer, z = 2)
+    main_scene.add(effect_layer, z = 3)
+    main_scene.add(visibility_layer, z = 4)
+    main_scene.add(equip_layer, z = 6)
+
     director.show_FPS = True
+
     import profile
     #profile.run('director.run(main_scene)', sort='cumtime')
+
     director.run(main_scene)
 
