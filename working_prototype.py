@@ -61,12 +61,12 @@ class PlayingLayer(layer.Layer, EventDispatcher, Observer):
 
 
     def spawn_initial_mobs(self):#+ initial visibility
-        #visibility--------------
+
         i_p = self.player.tile()['i'] + len(self.map_layer.map)
         j_p = self.player.tile()['j']
         vis_map = calculate_visibility(i_p, j_p, self.map_layer)
         self.dispatch_event('draw_player_vision',vis_map)
-        #mobs--------------------
+
         max_mobs = self.map_layer.level + 2
         amount_mobs = 0
         for i in range(0,len(self.map_layer.map)):
@@ -93,11 +93,11 @@ class PlayingLayer(layer.Layer, EventDispatcher, Observer):
                 result = [True, mob]
         return result
 
-    def move(self, d1, d2):
+    def move(self, d1, d2):#NOT CURRENTLY USED
         self.player.direction = (d1, d2)
         for child in self.get_children():
             child.move()
-        self.player.move()#NOT CURRENTLY USED
+        self.player.move()
 
     def check_passability(self,x1,y1):
         result = False
@@ -110,12 +110,12 @@ class PlayingLayer(layer.Layer, EventDispatcher, Observer):
 
     def do_after_turn(self):
         self.handling_moves = False
-        # visibility--------------
+
         i_p = self.player.tile()['i'] + len(self.map_layer.map)
         j_p = self.player.tile()['j']
         vis_map = calculate_visibility(i_p, j_p, self.map_layer)
         self.dispatch_event('draw_player_vision', vis_map)
-        #-------------------------
+
         print('turn:',self.player.turn)
         print('health:',self.player.health)
         for mob in self.mobs:   
@@ -132,7 +132,7 @@ class PlayingLayer(layer.Layer, EventDispatcher, Observer):
         if self.player.check_for_death() == True:
             self.remove(self.player)
             self.handling_moves = False
-            print('You died!')
+            print('You died!')#for now
         if self.mobs == []:
             print('You win!')#for now
         self.this_turn += 1

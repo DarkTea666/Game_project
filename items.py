@@ -1,4 +1,6 @@
 from cocos.sprite import Sprite
+from cocos.text import RichLabel
+from cocos.layer import Layer
 import starting_stats
 
 class Item(Sprite):
@@ -92,7 +94,8 @@ class Sceptre(Item):
                       sceptre_stats.image,
                       tile,
                       sceptre_stats.menu,
-                      {'Drop':self.Drop, 'Equip':self.Equip, 'Unequip':self.Unequip, 'Recharge':self.Recharge})
+                      {'Drop':self.Drop, 'Equip':self.Equip, 'Unequip':self.Unequip, 'Recharge':self.Recharge,
+                       'Cast':self.Cast})
         self.inv_type = 'all'
         self.equip_type = 'long_range'
         self.level = level
@@ -111,9 +114,18 @@ class Sceptre(Item):
                 class_dict['mana'] -= self.max_ammo*50
                 self.ammo = self.max_ammo
 
-    def Shoot(self):
+    def Cast(self):
         inv_layer = self.inv_layer
-        
+        play_layer = inv_layer.play_layer
+        if play_layer.inv_open == True:
+            play_layer.inv_open = False
+        play_layer.handling_moves = True
+        play_layer.parent.remove(inv_layer)
+        inv_layer.equip_layer.add(RichLabel("tap on a tile to shoot in it's diraction",
+                                            (425, 780), bold = True, font_size = 18))
+
+
+
 
 class Armour(Item):
     def __init__(self, armour_stats, tile, imbued=False, level=1):
