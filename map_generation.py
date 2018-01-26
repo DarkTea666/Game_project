@@ -1,5 +1,6 @@
 from cocos.sprite import Sprite
 from cocos.layer import Layer
+from cocos.batch import BatchNode
 
 from random import randrange
 
@@ -38,7 +39,13 @@ class LevelMap(Layer):#, Observer):
         self.level = level
         self.special_images = []#for putting non-standart walls and floor
                                 #in the level database
-        
+        batch1 = BatchNode()
+        self.batch1 = batch1
+        self.add(batch1)
+        batch2 = BatchNode()
+        self.batch2 = batch2
+        self.add(batch2)
+
     def __getitem__(self, key):
         return self.map[key]
 
@@ -127,7 +134,7 @@ class LevelMap(Layer):#, Observer):
                                 image = Sprite('Sprites/Forest_exit_tile.png')
                                 image.scale = 0.05
                                 image.position = (j+1)*50, (len(self.map)-i)*50
-                                self.add(image)
+                                self.batch1.add(image)
                                 self.special_images.append((i,j,image))
                                 self[i][j] = 'f'
 
@@ -144,7 +151,7 @@ class LevelMap(Layer):#, Observer):
                         boulder = Tile(image,1,False)
                         boulder.position = (j+1)*50, (len(self.map)-i)*50
                         boulder.scale = 0.049
-                        self.add(boulder)
+                        self.batch1.add(boulder)
 
             
     def draw_main_map(self,T0,T1,overlays1,overlays0):
@@ -182,7 +189,7 @@ class LevelMap(Layer):#, Observer):
                 #draw the tile
                 tile.position = (j+1)*50, (len(self.map)-i)*50
                 tile.scale = 0.049
-                self.add(tile)
+                self.batch1.add(tile)
 
         #draw the overlays
         for i in range(0,len(self.map)):
@@ -193,7 +200,7 @@ class LevelMap(Layer):#, Observer):
                         ext = extends[i][j][direction]
                         ext.position = (j+1+y)*50, (len(self.map)-i-x)*50
                         ext.scale = 0.049
-                        self.add(ext)
+                        self.batch2.add(ext)
                     
                     
                     

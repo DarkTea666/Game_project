@@ -47,8 +47,8 @@ class Item(Sprite):
                     if item_inf != False and item_inf[0] == self:
                         remove_that = (inv[0], inv[0].index(row), item_num)
                         break
-        inv_layer.equip_layer.equip_item(self,inv_layer)
-        remove_that[0][remove_that[1]][remove_that[2]] = False
+        if inv_layer.equip_layer.equip_item(self,inv_layer):
+            remove_that[0][remove_that[1]][remove_that[2]] = False
 
     def Unequip(self):
         inv_layer = self.inv_layer
@@ -60,7 +60,7 @@ class Item(Sprite):
             for name, item_space in inv_layer.equip_layer.equipment_dict.items():
                 if item_space[0] != False and item_space[0][0] == self:
                     remove_name = name
-                    inv_layer.equip_layer.add(item_space[1])
+                    inv_layer.equip_layer.batch.add(item_space[1])
             if remove_name != False:
                 inv_layer.equip_layer.equipment_dict[remove_name][0] = False
         else:
@@ -121,11 +121,8 @@ class Sceptre(Item):
             play_layer.inv_open = False
         play_layer.handling_moves = True
         play_layer.parent.remove(inv_layer)
-        inv_layer.equip_layer.add(RichLabel("tap on a tile to shoot in it's diraction",
+        inv_layer.equip_layer.add(RichLabel("tap on a tile to shoot in it's direction",
                                             (425, 780), bold = True, font_size = 18))
-
-
-
 
 class Armour(Item):
     def __init__(self, armour_stats, tile, imbued=False, level=1):

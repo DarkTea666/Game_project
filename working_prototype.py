@@ -53,7 +53,7 @@ class PlayingLayer(layer.Layer, EventDispatcher, Observer):
 
 
         #FOR TESTS: infinite health
-        #self.player.health = math.inf
+        self.player.health = math.inf
 
     def spawn_items(self):
         self.dispatch_event('generate_items_open_area')
@@ -99,10 +99,14 @@ class PlayingLayer(layer.Layer, EventDispatcher, Observer):
             child.move()
         self.player.move()
 
-    def check_passability(self,x1,y1):
+    def check_passability(self,x1,y1,called_by_mob = False):
         result = False
-        i = self.player.tile()['i'] + len(self.map_layer.map) - y1
-        j = self.player.tile()['j'] + x1
+        if not called_by_mob:
+            i = self.player.tile()['i'] + len(self.map_layer.map) - y1
+            j = self.player.tile()['j'] + x1
+        else:
+            i = called_by_mob.tile()['i'] + len(self.map_layer.map) - y1
+            j = called_by_mob.tile()['j'] + x1
         a_mob_here = self.check_tile_for_mob(j,i)[0]
         if self.map_layer[i][j] == 0 and not a_mob_here:
             result = True

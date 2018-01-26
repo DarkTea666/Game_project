@@ -4,6 +4,7 @@ from cocos.actions import MoveBy, MoveTo, CallFunc
 from pyglet.event import EventDispatcher
 
 from functools import partial
+from random import randrange
 
 import starting_stats
 from observer_class import Observer
@@ -96,7 +97,7 @@ class Monster(Sprite): #non-boss
         mobs = self.parent.mobs
         self.moves = 0
         moving_actions = []
-        #--------------visibility
+
         player_is_visible = False
         i_m = self.tile()['i'] + len(map_layer.map)
         j_m = self.tile()['j']
@@ -105,7 +106,6 @@ class Monster(Sprite): #non-boss
         vis_map = calculate_visibility(i_m, j_m, map_layer)
         if vis_map[i_player][j_player] != '#':
             player_is_visible = True
-        #------------------------
 
         if player_is_visible:
             while self.speed != self.moves :
@@ -131,6 +131,15 @@ class Monster(Sprite): #non-boss
                             p, q = (x - j1) * 50, -(y - i1) * 50
                             self.moves += 1
                             moving_actions.append(MoveBy((p, q), 0.1))
+        if not player_is_visible:#move randomly if can't see player
+            not_moved_key = True
+            while not_moved_key:
+                x = randrange(-1,2)
+                y = randrange(-1,2)
+                if self.parent.check_passability(x,y,self):
+                    moving_actions.append(MoveBy((x*50, y*50), 0.1))
+                    not_moved_key = False
+
         result_action = MoveBy((0, 0), 0)
         for action in moving_actions:
             result_action += action

@@ -1,5 +1,6 @@
 from cocos.layer import Layer
 from cocos.sprite import Sprite
+from cocos.batch import BatchNode
 
 import starting_stats
 from item_menu_layer import ItemMenuLayer
@@ -8,6 +9,10 @@ class EquipedLayer(Layer):
     is_event_handler = True
     def __init__(self):
         Layer.__init__(self)
+
+        batch = BatchNode()
+        self.batch = batch
+        self.add(batch)
         self.equipment_dict = {'weapon':[False,Sprite('Sprites/Weapon_empty_slot.png'),760],
                                'armour':[False,Sprite('Sprites/Armour_empty_slot.png'),680],
                                'long_range_1':[False,Sprite('Sprites/Ranged_empty_slot.png'),600],
@@ -21,12 +26,12 @@ class EquipedLayer(Layer):
         for name, space in self.equipment_dict.items():
             space[1].position = 1200, space[2]
             space[1].scale = 0.075
-            self.add(space[1])
+            self.batch.add(space[1])
 
         self.selecter = Sprite('Sprites/Selecter.png')
         self.selecter.scale = 0.05
         self.selecter.opacity = 0
-        self.add(self.selecter)
+        self.batch.add(self.selecter)
 
 
     def equip_item(self,item,inv_layer):
@@ -38,15 +43,17 @@ class EquipedLayer(Layer):
                 if space[0] == False:
                     inv_layer.remove(item)
                     space[0] = (item, item.buttons)
-                    self.remove(space[1])
+                    self.batch.remove(space[1])
                     blank.position = 1200, space[2]
                     item.scale = 0.075
-                    self.add(blank)
+                    self.batch.add(blank)
                     item.position = 1200, space[2]
                     self.add(item)
                     equip_key = True
+                    return True
                     break
         if not equip_key:
+            return False
             print("You don't have enough space to equip this item")
 
     def on_mouse_press(self,x,y,buttons,modifiers):
@@ -56,16 +63,12 @@ class EquipedLayer(Layer):
                 self.selecter.position = 1200, space[2]
                 self.selecter.scale = 0.075
                 self.selecter.opacity = 255
-                self.add(self.selecter)
+                self.batch.add(self.selecter)
                 the_item = space[0]
                 not_press = False
                 self.add(ItemMenuLayer(the_item, from_equiped_layer = True))
         if not_press:
             self.selecter.opacity = 0
-        #|========================================================|
-        #| TO DO: IS STILL VERY WIERD WITH SOMETIMES. BUGFIX THIS |
-        #|========================================================|
-
 
 
 
