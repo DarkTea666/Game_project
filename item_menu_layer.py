@@ -43,7 +43,7 @@ class ItemMenuLayer(Layer):
         non_press = True
         for button in self.item_buttons:
             name, y_b = button
-            if 425<=x<=425+11.1*len(name) and y_b<=y<=y_b+10:
+            if 425<=x<=425+11.1*len(name) and y_b-5<=y<=y_b+15:
                 for button_name, button_func in self.item.buttons.items():
                     if button_name == name:
                         button_func()

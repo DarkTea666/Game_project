@@ -31,7 +31,7 @@ class EquipedLayer(Layer):
         self.selecter = Sprite('Sprites/Selecter.png')
         self.selecter.scale = 0.05
         self.selecter.opacity = 0
-        self.batch.add(self.selecter)
+        self.add(self.selecter)
 
 
     def equip_item(self,item,inv_layer):

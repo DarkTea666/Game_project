@@ -1,7 +1,15 @@
+
 from cocos.sprite import Sprite
 from cocos.text import RichLabel
 from cocos.layer import Layer
+from cocos.actions import RotateBy, MoveBy, MoveTo
+
+import math
+
 import starting_stats
+
+from selecting_layer import SelectLayer
+from visibility import tile_line_vis, ray_to_border
 
 class Item(Sprite):
     def __init__(self,name,image,tile,menu,buttons,inv_type='all'):
@@ -66,6 +74,19 @@ class Item(Sprite):
         else:
             print('the inventory of that type is full')
 
+    def Missile_path_function(self, target_i, target_j):
+        player = self.inv_layer.play_layer.player
+        map_layer = self.inv_layer.play_layer.map_layer
+        x, y = (target_j+1)*50, (len(map_layer.map)-target_i)*50
+        x_p, y_p = player.race_sprite.position
+        line_end_coords = ray_to_border(x_p, y_p, x, y, 1225, 25, 775, 25)
+        x0,y0 = line_end_coords
+        xc, yc = x0 - (x%50)+25, y0-(y%50)+25
+        j_e, i_e = xc/50-1, -yc/50+len(map_layer.map)
+        j_p, i_p = player.tile()['i'] + len(map_layer.map), player.tile()['j']
+        line_of_fire = tile_line_vis(j_p, i_p, target_j, target_i, map_layer)#SOMETIMES RANDOMLY DOESN'T WORK
+        return line_of_fire
+
 
 class Weapon(Item):
     def __init__(self,weapon_stats, tile, enchantment = False, level = 1):
@@ -120,9 +141,33 @@ class Sceptre(Item):
         if play_layer.inv_open == True:
             play_layer.inv_open = False
         play_layer.handling_moves = True
-        play_layer.parent.remove(inv_layer)
-        inv_layer.equip_layer.add(RichLabel("tap on a tile to shoot in it's direction",
-                                            (425, 780), bold = True, font_size = 18))
+        try:
+            play_layer.parent.remove(inv_layer)
+        except:
+            pass
+        select_layer = SelectLayer(inv_layer)
+        select_layer.function = self.Bluefire_cast
+        #puts it's value, None into select_layer.function
+        inv_layer.parent.add(select_layer, z = 4)
+        #   FINISH THIS
+
+    def Bluefire_cast(self, select_layer, effect_layer, target_i = False, target_j = False):
+        player = self.inv_layer.play_layer.player
+        map_layer = self.inv_layer.play_layer.map_layer
+
+        missile_path = self.Missile_path_function(target_i, target_j)
+        end_i, end_j = missile_path[len(missile_path)-1][0], missile_path[len(missile_path)-1][1]
+        print(end_j,end_i)
+        x0, y0 = (end_j+1)*50, (len(map_layer.map)-end_i)*50
+
+        missile_image = 'Sprites/Effect_Blue_Fireball.png'
+        missile_sprite = Sprite(missile_image)
+        missile_sprite.scale = 0.05
+        missile_sprite.position = player.race_sprite.position
+        effect_layer.add(missile_sprite)
+        missile_sprite.do(MoveTo((x0,y0),len(missile_path)/10))
+
+
 
 class Armour(Item):
     def __init__(self, armour_stats, tile, imbued=False, level=1):

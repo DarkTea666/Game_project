@@ -24,6 +24,7 @@ from visibility_layer import VisibilityLayer
 from inventories import InventoryLayer
 from equiped_layer import EquipedLayer
 from create_monster import Monster
+from selecting_layer import SelectLayer
 import items
 
 
@@ -192,15 +193,8 @@ class PlayingLayer(layer.Layer, EventDispatcher, Observer):
                         self.interactive_layer.remove(item)
                         self.do_after_turn()
                         self.player.turn += 1
-        #__________________________#TEMPORARY
-        if symbol_string(key) == 'S':#TEMPORARY
-            fireball = Sprite('Sprites/Effect_Blue_Fireball.png')
-            fireball.scale = 0.05
-            x,y = self.player.race_sprite.position
-            fireball.position = x,y
-            effect_layer.add(fireball)
-            fireball.do(RotateBy(90,0)+MoveBy((600,0),3))
-        #___________________________#TEMPORARY
+
+
 
 PlayingLayer.register_event_type('generate_items_open_area')
 PlayingLayer.register_event_type('draw_player_vision')
@@ -219,6 +213,7 @@ if __name__=="__main__":
     equip_layer = EquipedLayer()
     inventory_layer = InventoryLayer(play_layer, interactive_layer, equip_layer)
 
+
     player1.equip_layer = equip_layer
     play_layer.effect_layer = effect_layer
     play_layer.player.inventory = inventory_layer
@@ -231,7 +226,7 @@ if __name__=="__main__":
     main_scene.add(interactive_layer, z = 1)
     main_scene.add(play_layer, z = 2)
     main_scene.add(effect_layer, z = 3)
-    main_scene.add(visibility_layer, z = 4)
+    main_scene.add(visibility_layer, z = 5)
     main_scene.add(equip_layer, z = 6)
 
     director.show_FPS = True
