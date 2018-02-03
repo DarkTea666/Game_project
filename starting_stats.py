@@ -33,10 +33,10 @@ healer_dict = 0
 
 slinger_dict = 0
 archer_dict = 0
-ninga_dict = 0
+ninja_dict = 0
 crossbow_man_dict = 0
 
-knigth_dict = 0
+knight_dict = 0
 barbarian_dict = 0
 gladiator_dict = 0
 paladin_dict = 0
@@ -62,13 +62,13 @@ Slinger = Class('Sling','Heavy_Leather',
                 3, 0.01, 3, slinger_dict,'dict')
 Archer = Class('Bow','Light_Leather',
                3, 0.01, 4, archer_dict,'img')
-Ninga = Class('Shuriken','Light_Leather',
-              4, 0.01, 5, ninga_dict,'img')
+Ninja = Class('Shuriken','Light_Leather',
+              4, 0.01, 5, ninja_dict,'img')
 Crossbow_man = Class('Crossbow','Heavy_Leather',
                      3, 0.01, 3, crossbow_man_dict,'img')
 
-Knigth = Class('Sword','Heavy_Chainmail',
-               2, 0.015, 3, knigth_dict, 'img')
+Knight = Class('Sword','Heavy_Chainmail',
+               2, 0.015, 3, knight_dict, 'img')
 Barbarian = Class('Axe','Light_Chainmail',
                   3, 0.01, 1, barbarian_dict, 'img')
 Gladiator = Class('Spear','Heavy_Leather',

@@ -8,7 +8,8 @@ from cocos.sprite import Sprite
 from cocos.text import RichLabel
 
 import starting_stats
-
+from cocos.director import director
+from main_scene import MainScene
 
 class FirstLayer(layer.Layer, EventDispatcher):
     is_event_handler = True
@@ -33,6 +34,4 @@ class FirstLayer(layer.Layer, EventDispatcher):
             self.add(button)
 
     def on_mouse_press(self,x,y,buttons,modifiers):
-        self.dispatch_event('switch_scene')
-
-FirstLayer.register_event_type('switch_scene')
+        director.push(MainScene())

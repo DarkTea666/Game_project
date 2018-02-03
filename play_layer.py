@@ -51,7 +51,7 @@ class PlayingLayer(layer.Layer, EventDispatcher, Observer):
         #TO DO: MAKE IT SPAWN ITEMS DIFFERENTLY WITH EACH TYPE OF LEVEL
 
 
-    def spawn_initial_mobs(self):#+ initial visibility
+    def spawn_initial_mobs(self):
         i_p = self.player.tile()['i'] + len(self.map_layer.map)
         j_p = self.player.tile()['j']
         vis_map = calculate_visibility(i_p, j_p, self.map_layer)
@@ -72,8 +72,6 @@ class PlayingLayer(layer.Layer, EventDispatcher, Observer):
                     self.mobs.append(mob)
                     mob.position = (j+1)*50, (len(self.map_layer.map)-i)*50
                     self.add(mob)
-        #for m in range(0,len(self.mobs)-1):
-         #   self.mobs[m+1].new_observer_init(subj2 = self.mobs[m])
 
     def check_tile_for_mob(self,j,i):
         result = [False]
@@ -132,13 +130,13 @@ class PlayingLayer(layer.Layer, EventDispatcher, Observer):
         self.this_turn += 1
 
     def player_do_turn(self, x, y):
-        player1.current_map = map_layer.map
+        self.player.current_map = self.map_layer.map
         self.player.direction = x,y
         mob_tile = self.check_tile_for_mob(self.player.tile()['j'] + x,
                                            self.player.tile()['i'] - y + len(self.map_layer.map))
         self.player.move_if_possible()
-        # hit if there is a mob
-        if  mob_tile[0]:
+
+        if  mob_tile[0]:# hit if there is a mob
             mob = mob_tile[1]
             print('You hit the', mob.name, '!')
             self.player.close_range_attack(mob)
@@ -164,7 +162,7 @@ class PlayingLayer(layer.Layer, EventDispatcher, Observer):
                 self.inv_open = True
                 self.handling_moves = False
                 self.parent.add(self.player.inventory, z = 5)
-                self.player.inventory_layer.handling_events = True
+                self.player.inventory.handling_events = True
             elif self.inv_open:
                 self.inv_open = False
                 self.handling_moves = True
@@ -182,9 +180,5 @@ class PlayingLayer(layer.Layer, EventDispatcher, Observer):
                         self.interactive_layer.remove(item)
                         self.do_after_turn()
                         self.player.turn += 1
-
-    def switch_scene(self): #for now. later the main scene should be created the
-                    #first time and then only partly generated
-        director.replace(MoveInRTransition(self.parent, duration=2))
 
 PlayingLayer.register_event_type('draw_player_vision')
