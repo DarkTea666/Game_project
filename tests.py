@@ -8,7 +8,7 @@ assert(map_layer.neighbors(7,11)==[0,0,0,0,0,0,0,0])
 
 from unittest import TestCase, main
 
-from working_prototype import *
+from Main_proramm import *
 
 class TestPassability(TestCase):
     def setUp(self):
