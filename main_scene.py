@@ -18,10 +18,10 @@ from play_layer import PlayingLayer
 import items
 
 class MainScene(Scene):
-    def __init__(self):
+    def __init__(self, chosen_race = config.Human, chosen_class = config.Warlock):
         Scene.__init__(self)
 
-        player1 = Player(config.Human, config.Warlock)
+        player1 = Player(chosen_race, chosen_class)
 
         map_layer = LevelMap(1, subject1=player1)
         map_layer.generate_map()

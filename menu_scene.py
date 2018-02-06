@@ -34,4 +34,12 @@ class FirstLayer(layer.Layer, EventDispatcher):
             self.add(button)
 
     def on_mouse_press(self,x,y,buttons,modifiers):
-        director.push(MainScene())
+        button_y = 750
+        for button in self.race_selection_dict:
+            if 1000<x<1250 and button_y-20<y<button_y+20:
+                chosen_race = self.race_selection_dict[button][0]
+                print(chosen_race)
+                director.push(MainScene(chosen_race = chosen_race))
+            button_y -= 100
+                                  # later needs to be changed so the player and inventory_layer stay,
+                                  #and the mobs and and the map get added to a database
