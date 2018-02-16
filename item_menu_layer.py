@@ -2,6 +2,7 @@ from pyglet.window.key import symbol_string
 from cocos.layer import Layer
 from cocos.sprite import Sprite
 from cocos.text import RichLabel
+from cocos.batch import BatchNode
 
 from functools import partial
 
@@ -9,6 +10,10 @@ class ItemMenuLayer(Layer):
     is_event_handler = True
     def __init__(self, the_item, from_equiped_layer = False):
         Layer.__init__(self)
+
+        batch = BatchNode()
+        self.batch = batch
+        self.add(batch)
 
         self.item = the_item[0]
         self.item_funcs = the_item[1]
@@ -34,7 +39,7 @@ class ItemMenuLayer(Layer):
                 background.scale_x = len(button)
                 background.position = 425 + 11.1*len(button)/2, y+5
                 self.y0 = y-20
-                self.add(background)
+                self.batch.add(background)
                 self.add(button_text)
                 self.item_buttons.append((button, y))
                 y -= 40

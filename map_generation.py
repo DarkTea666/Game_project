@@ -134,7 +134,7 @@ class LevelMap(Layer):#, Observer):
                                 image = Sprite('Sprites/Forest_exit_tile.png')
                                 image.scale = 0.05
                                 image.position = (j+1)*50, (len(self.map)-i)*50
-                                self.batch1.add(image)
+                                self.add(image)#.batch1.add(image)
                                 self.special_images.append((i,j,image))
                                 self[i][j] = 'f'
 
@@ -143,7 +143,7 @@ class LevelMap(Layer):#, Observer):
                 for j in range(0,len(self.map[0])):
                     if self.neighbors(i,j) == [0,0,0,0,0,0,0,0] and \
                      self[i][j] == 0 and randrange(100)>90 and \
-                     (i != 7 and j != 11):
+                     (i != 7 or j != 11) and (i != 6 or j != 12):
                         self[i][j] = 1
                         image = 'Sprites/Forest_Boulder_tile_decor.png'
                         self.special_images.append((i,j,image))
@@ -151,7 +151,7 @@ class LevelMap(Layer):#, Observer):
                         boulder = Tile(image,1,False)
                         boulder.position = (j+1)*50, (len(self.map)-i)*50
                         boulder.scale = 0.049
-                        self.batch1.add(boulder)
+                        self.add(boulder)#.batch1.add(boulder)
 
             
     def draw_main_map(self,T0,T1,overlays1,overlays0):

@@ -1,4 +1,12 @@
 from collections import namedtuple
+import os.path
+
+import pyglet
+
+PROJECT_DIR = os.path.dirname(__file__)
+
+pyglet.resource.path.append(os.path.abspath('.'))
+pyglet.resource.reindex()
 
 #----------------------------Race-----------------------------------------------
 Race = namedtuple('Race',
@@ -50,7 +58,7 @@ herbalist_dict = 0
 Wizard = Class('Staff','Cloth',
                5,0.01, 10, wizard_dict,'img')
 Warlock = Class('Staff','Light_Leather',
-                3, 0.005, 6, warlock_dict,'Sprites/Warlock.png')
+                3, 0.005, 6, warlock_dict, 'Sprites/Warlock.png')
 Elementalist = Class('Staff','Light_Leather',
                      8, 0.015, 6, elementalist_dict,'img')
 Necromancer = Class('Sythe','Cloth',
@@ -132,7 +140,7 @@ Long_sword = Weapon('Longsword', 'sword', 15, 0.06, 10,
 Broad_sword = Weapon('Greatsword', 'sword', 30, 0.1, 15,
                     'Sprites/Item_broad_sword.png', broad_sword_menu)
 Great_sword = Weapon('Greatsword', 'sword', 32, 0.03, 18,
-                    'Sprites/Item_great_sword.png', great_sword_menu)
+                     'Sprites/Item_great_sword.png', great_sword_menu)
 #---Sceptres-----
 Sceptre = namedtuple('Staff',
                    ['name','base_damage','req_intelligence','max_ammo',
@@ -144,8 +152,8 @@ bluefire_sceptre_menu = ['''This rather ordinary bluefire sceptre does not requr
 
 
 Bluefire_sceptre = Sceptre('Bluefire sceptre', 5, 3, 5,
-                           'Sprites/Item_bluefire_sceptre.png', bluefire_sceptre_menu,
-                           [])
+                            'Sprites/Item_bluefire_sceptre.png', bluefire_sceptre_menu,
+                            [])
 
 
 

@@ -55,18 +55,16 @@ class Player(Layer, EventDispatcher, Observer):
         self.speed = Race.speed
         self.level = 1
         self.exp = 0
-        self.race_sprite = Race.race_sprite
-        self.class_sprite = Class.class_sprite
                 
         self.direction = (0, 0)#could be used for turning while walking
         self.current_map = False
         
-        self.class_sprite = Sprite(self.class_sprite)
+        self.class_sprite = Sprite(Class.class_sprite)
         self.class_sprite.position = 600, 400
         self.class_sprite.scale = 0.05
         self.add(self.class_sprite)
 
-        self.race_sprite = Sprite(self.race_sprite)
+        self.race_sprite = Sprite(Race.race_sprite)
         self.race_sprite.position = 600, 400
         self.race_sprite.scale = 0.05
         self.add(self.race_sprite)
