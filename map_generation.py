@@ -4,7 +4,7 @@ from cocos.batch import BatchNode
 
 from random import randrange
 
-import starting_stats
+from util import util_starting_stats as starting_stats
 from observer_class import Observer
 
 class Tile(Sprite):

@@ -1,4 +1,4 @@
-import starting_stats
+from util import util_starting_stats as starting_stats
 
 Human = starting_stats.Human
 Elf = starting_stats.Elf

@@ -1,9 +1,8 @@
 from observer_class import Observer
 
 from cocos.layer import Layer
-import items
-import starting_stats
-
+from items import items
+from util import util_starting_stats as starting_stats
 
 class InteractableLayer(Layer, Observer):#holds items, doors, chests, crates(ex: bookcases)...
     def __init__(self, map_layer, subj1 = False, subj2 = False):

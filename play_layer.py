@@ -1,22 +1,14 @@
 from pyglet.window.key import symbol_string
 from pyglet.event import EventDispatcher
 
-from cocos import layer, scene
-from cocos.scenes import *
-from cocos.director import director
-from cocos.actions import MoveBy, MoveTo, CallFunc, RotateBy
-from cocos.sprite import Sprite
-from cocos.text import RichLabel
+from cocos import layer
 
 from random import randrange
-from functools import partial
 import math
 
-from pathfinding import pathfind_to_target
-from database_ideas import move_level_to_database
 from observer_class import Observer
-from visibility import calculate_visibility
-import starting_stats
+from algorithms.algorithms_visibility import calculate_visibility
+from util import util_starting_stats
 from create_monster import Monster
 
 class PlayingLayer(layer.Layer, EventDispatcher, Observer):
@@ -44,7 +36,7 @@ class PlayingLayer(layer.Layer, EventDispatcher, Observer):
 
 
         #FOR TESTS: infinite health
-        self.player.health = math.inf
+        #self.player.health = math.inf
 
     def spawn_items(self):
         self.interactive_layer.generate_items_open_area()
@@ -66,8 +58,8 @@ class PlayingLayer(layer.Layer, EventDispatcher, Observer):
                    self.player.tile()['j'] != j and \
                    self.player.tile()['i'] + len(self.map_layer.map) != i:
                     amount_mobs += 1
-                    mob = Monster(starting_stats.Gnoll_hunter.monster_sprite,
-                                  starting_stats.Gnoll_hunter,
+                    mob = Monster(util_starting_stats.Gnoll_hunter.monster_sprite,
+                                  util_starting_stats.Gnoll_hunter,
                                   self.map_layer.level)
                     self.mobs.append(mob)
                     mob.position = (j+1)*50, (len(self.map_layer.map)-i)*50

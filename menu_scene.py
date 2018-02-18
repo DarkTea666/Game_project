@@ -1,13 +1,10 @@
-from pyglet.window.key import symbol_string
 from pyglet.event import EventDispatcher
 
 
-from cocos import layer, scene
-from cocos.actions import MoveBy, MoveTo, CallFunc, RotateBy
-from cocos.sprite import Sprite
+from cocos import layer
 from cocos.text import RichLabel
 
-import starting_stats
+from util import util_starting_stats
 from cocos.director import director
 from main_scene import MainScene
 
@@ -19,14 +16,14 @@ class FirstLayer(layer.Layer, EventDispatcher):
 
         self.start_button = RichLabel('Click on a race to choose it')
 
-        self.race_selection_dict = {'Human': (starting_stats.Human,'image'),
-                                  'Drwarf': (starting_stats.Dwarf,'image'),
-                                    'Elf': (starting_stats.Elf,'image'),
-                                    'Orc': (starting_stats.Orc,'image'),
-                                    'Goblin': (starting_stats.Goblin,'image'),
-                                    'Demon': (starting_stats.Demon,'image'),
-                                    'Vampire': (starting_stats.Vampire,'image'),
-                                    'Ghost': (starting_stats.Ghost,'image')}
+        self.race_selection_dict = {'Human': (util_starting_stats.Human, 'image'),
+                                  'Drwarf': (util_starting_stats.Dwarf, 'image'),
+                                    'Elf': (util_starting_stats.Elf, 'image'),
+                                    'Orc': (util_starting_stats.Orc, 'image'),
+                                    'Goblin': (util_starting_stats.Goblin, 'image'),
+                                    'Demon': (util_starting_stats.Demon, 'image'),
+                                    'Vampire': (util_starting_stats.Vampire, 'image'),
+                                    'Ghost': (util_starting_stats.Ghost, 'image')}
         button_y = 750
         for race_name, race in self.race_selection_dict.items():
             button = RichLabel(race_name, position=(1000, button_y), font_size=20)

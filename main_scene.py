@@ -3,9 +3,11 @@ from cocos import layer, scene
 from cocos.scenes import *
 from cocos.director import director
 
-from visibility import calculate_visibility
-import starting_stats
+from algorithms.algorithms_visibility import calculate_visibility
+
+from util import util_starting_stats as starting_stats
 import config
+
 from create_character import Player
 from map_generation import LevelMap
 from interract_layer import InteractableLayer
@@ -13,7 +15,7 @@ from effect_layer import EffectLayer
 from visibility_layer import VisibilityLayer
 from inventories import InventoryLayer
 from equiped_layer import EquipedLayer
-from selecting_layer import SelectLayer
+from util.util_selecting_layer import SelectLayer
 from play_layer import PlayingLayer
 import items
 

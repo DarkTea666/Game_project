@@ -3,7 +3,7 @@ from cocos.sprite import Sprite
 
 from functools import partial
 
-from visibility import calculate_visibility
+from algorithms.algorithms_visibility import calculate_visibility
 
 class SelectLayer(Layer):
     is_event_handler = True

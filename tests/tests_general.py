@@ -5,15 +5,13 @@ assert(pathfind_to_target(map_layer, 7, 11, 6, 10,
                           play_layer.mobs)==[(6, 10)])
 assert(map_layer.neighbors(7,11)==[0,0,0,0,0,0,0,0])
 """
-import pyglet
 from unittest import TestCase, main
-from Main_program import *
 from main_scene import *
 
 class TestPassability(TestCase):
     def setUp(self):
         self.window = director.init(width=1250, height=800, autoscale=True, resizable=True, visible=False)
-        player1 = Player(starting_stats.Human,starting_stats.Warlock)
+        player1 = Player(starting_stats.Human, starting_stats.Warlock)
 
         self.map_layer = LevelMap(1)
         self.map_layer.generate_map()

@@ -1,4 +1,3 @@
-from collections import namedtuple
 from cocos.layer import Layer
 from cocos.sprite import Sprite
 from cocos.actions import MoveBy, CallFunc
@@ -7,7 +6,8 @@ from pyglet.event import EventDispatcher
 from functools import partial
 
 from observer_class import Observer
-import starting_stats
+from util import util_starting_stats
+
 
 class Player(Layer, EventDispatcher, Observer):
 
@@ -148,8 +148,8 @@ class Player(Layer, EventDispatcher, Observer):
         self.damage += self.vampire_attributes['blood_strength']
 
     def do_if_vampire(self):
-        if self.race == starting_stats.Vampire:
-            self.vampire_attributes = starting_stats.vampire_dict
+        if self.race == util_starting_stats.Vampire:
+            self.vampire_attributes = util_starting_stats.vampire_dict
             self.vampire_attributes['blood_strength'] = self.vampire_attributes['blood_level']/10
             self.vampire_attributes['blood_strength'] = self.vampire_attributes['blood_level']
 

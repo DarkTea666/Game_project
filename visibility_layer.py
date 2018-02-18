@@ -4,8 +4,7 @@ from cocos.batch import BatchNode
 from cocos.actions import FadeIn, FadeOut, Delay, CallFunc
 
 from observer_class import Observer
-
-import starting_stats
+from util import util_starting_stats as starting_stats
 
 class VisibilityLayer(Layer,Observer):
     def __init__(self, map_layer, subj1 = False, subj2 = False):

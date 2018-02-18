@@ -2,7 +2,6 @@ from cocos.layer import Layer
 from cocos.sprite import Sprite
 from cocos.batch import BatchNode
 
-import starting_stats
 from item_menu_layer import ItemMenuLayer
 
 class EquipedLayer(Layer):

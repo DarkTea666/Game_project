@@ -1,15 +1,11 @@
-from collections import namedtuple
 from cocos.sprite import Sprite
-from cocos.actions import MoveBy, MoveTo, CallFunc
-from pyglet.event import EventDispatcher
+from cocos.actions import MoveBy, CallFunc
 
-from functools import partial
 from random import randrange
 
-import starting_stats
-from observer_class import Observer
-from pathfinding import pathfind_to_target
-from visibility import calculate_visibility
+from util import util_starting_stats
+from algorithms.algorithms_pathfinding import pathfind_to_target
+from algorithms.algorithms_visibility import calculate_visibility
 #import loot_tables
 
 class Monster(Sprite): #non-boss
@@ -66,12 +62,12 @@ class Monster(Sprite): #non-boss
     def check_for_death(self,player):
         result = False
         if self.health < 1: #fills up Vampires and Ghosts
-            if player.race == starting_stats.Vampire:
+            if player.race == util_starting_stats.Vampire:
                 if player.race == Vampire and not self.undead and \
                    player.vampire_attributes['blood_level'] > 10:
                     player.vampire_attributes['blood_level'] += 1
 
-            if player.race == starting_stats.Ghost:
+            if player.race == util_starting_stats.Ghost:
                 if player.race == Ghost and not self.spectral and \
                    player.ghost_attributes['soul_level'] <= 10:
                     player.ghost_attributes['soul_level'] += 1
