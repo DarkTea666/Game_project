@@ -61,7 +61,7 @@ def pathfind_to_target(map_layer, s_i, s_j, t_i, t_j, blocked_tiles):
 
         closed_list = [tile_score(map_layer, s_i, s_j, t_i, t_j)]
 
-        while in_list(target_tile, open_list) == False:
+        while in_list(target_tile, open_list) == False and open_list != []:
                 min_tile = find_min_score(open_list)
                 tile_do(min_tile, map_layer, open_list, closed_list, t_i, t_j, blocked_tiles)
 
@@ -71,16 +71,18 @@ def trace_back_path(map_layer, s_i, s_j, t_i, t_j, open_list, closed_list):
         for tile in open_list:
             if tile['h'] == 0:
                 g = tile['g']
-        path_list = [(t_i, t_j)]
+        path_list = []
         io = t_i
         jo = t_j
-        while g != 0:
-                for tile in closed_list:
-                    if tile['g'] == g - 1 and (io,jo,0) in map_layer.neighbor_tiles(tile['i'],tile['j']):
-                        key_first = False
-                        g = tile['g']
-                        io = tile['i']
-                        jo = tile['j']
-                        path_list.insert(0, (tile['i'], tile['j']))
+        if open_list != []:
+            while g != 0:
+                    for tile in closed_list:
+                        if tile['g'] == g - 1 and (io,jo,0) in map_layer.neighbor_tiles(tile['i'],tile['j']):
+                            key_first = False
+                            g = tile['g']
+                            io = tile['i']
+                            jo = tile['j']
+                            path_list.insert(0, (tile['i'], tile['j']))
+            path_list.append((t_i, t_j))
         return path_list
 

@@ -25,6 +25,9 @@ class EffectLayer(Layer):
     def change_position(self, sprite, x, y):
         sprite.position = x, y
 
+    def effect_remove(self,sprite):
+        self.remove(sprite)
+
     def normal_strike(self, x, y, the_player):
         strike = self.strikes['normal']
         place_strike = CallFunc(self.change_position, strike, x, y) + \

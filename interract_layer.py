@@ -1,7 +1,7 @@
 from observer_class import Observer
 
 from cocos.layer import Layer
-from items import items
+from items import items_base, items_weapons, items_sceptres
 from util import util_starting_stats as starting_stats
 
 class InteractableLayer(Layer, Observer):#holds items, doors, chests, crates(ex: bookcases)...
@@ -19,28 +19,28 @@ class InteractableLayer(Layer, Observer):#holds items, doors, chests, crates(ex:
         self.map_layer = map_layer
 
     def generate_items_open_area(self):
-        sword3 = items.Weapon(starting_stats.Broad_sword, (8, 10))
+        sword3 = items_weapons.Weapon(starting_stats.Broad_sword, (8, 10))
         self.items.append(sword3)
         y, x = sword3.tile
         sword3.scale = 0.05
         sword3.position = ((x + 1) * 50, (len(self.map_layer.map) - y) * 50)
         self.add(sword3)
 
-        sword3 = items.Sceptre(starting_stats.Bluefire_sceptre, (7, 10))
+        sword3 = items_sceptres.Sceptre(starting_stats.Bluefire_sceptre, (7, 10))
         self.items.append(sword3)
         y, x = sword3.tile
         sword3.scale = 0.05
         sword3.position = ((x + 1) * 50, (len(self.map_layer.map) - y) * 50)
         self.add(sword3)
 
-        sword3 = items.Weapon(starting_stats.Long_sword, (6, 10))
+        sword3 = items_weapons.Weapon(starting_stats.Long_sword, (6, 10))
         self.items.append(sword3)
         y, x = sword3.tile
         sword3.scale = 0.05
         sword3.position = ((x + 1) * 50, (len(self.map_layer.map) - y) * 50)
         self.add(sword3)
 
-        sword3 = items.Weapon(starting_stats.Short_sword, (5, 10))
+        sword3 = items_weapons.Weapon(starting_stats.Short_sword, (5, 10))
         self.items.append(sword3)
         y, x = sword3.tile
         sword3.scale = 0.05

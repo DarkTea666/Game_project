@@ -52,7 +52,7 @@ def tile_line_vis(w_x, w_y, j, i, map_layer):
     return result_list
 
 
-def calculate_visibility(w_i, w_j, map_layer, visualise_in_text = False):
+def calculate_visibility(w_i, w_j, map_layer, visualise_in_text = False, print_as_list = False):
     vis_list = []
     for j in range(0,len(map_layer[0])):#upper border
         vis_list += tile_line_vis(w_j, w_i,
@@ -81,11 +81,14 @@ def calculate_visibility(w_i, w_j, map_layer, visualise_in_text = False):
                 else:
                     row.append('#')
             print(*row)
-
-    return [[map_layer[i][j] if ((i,j) in vis_list) else '#' for j
+    vis_map = [[map_layer[i][j] if ((i,j) in vis_list) else '#' for j
              in range(0, len(map_layer[0]))] for i in range(len(map_layer.map))]
+    if print_as_list:
+        print(vis_map)
+    return vis_map
 
-#just a useful thing to have
+
+#not used at the moment. no need for testing
 def ray_to_border(x0, y0, x1, y1,
                   right_border,
                   left_border,

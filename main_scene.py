@@ -38,8 +38,10 @@ class MainScene(Scene):
         play_layer.effect_layer = effect_layer
         play_layer.player.inventory = inventory_layer
         play_layer.interactive_layer = interactive_layer
+        equip_layer.inv_layer = inventory_layer
         play_layer.spawn_initial_mobs()
         play_layer.spawn_items()
+        equip_layer.visualise_equiped_items()
 
         self.add(map_layer, z=0)
         self.add(interactive_layer, z=1)

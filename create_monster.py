@@ -66,7 +66,6 @@ class Monster(Sprite): #non-boss
                 if player.race == Vampire and not self.undead and \
                    player.vampire_attributes['blood_level'] > 10:
                     player.vampire_attributes['blood_level'] += 1
-
             if player.race == util_starting_stats.Ghost:
                 if player.race == Ghost and not self.spectral and \
                    player.ghost_attributes['soul_level'] <= 10:
@@ -127,7 +126,7 @@ class Monster(Sprite): #non-boss
                             p, q = (x - j1) * 50, -(y - i1) * 50
                             self.moves += 1
                             moving_actions.append(MoveBy((p, q), 0.1))
-        if not player_is_visible:#move randomly if can't see player
+        if not player_is_visible:#move randomly
             not_moved_key = True
             while not_moved_key:
                 x = randrange(-1,2)

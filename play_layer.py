@@ -148,7 +148,6 @@ class PlayingLayer(layer.Layer, EventDispatcher, Observer):
                 x,y = buttons[symbol_string(key)]
                 self.player.direction = x, y
                 self.player_do_turn(x,y)
-
         if symbol_string(key) == 'I':#switch to inventory
             if not self.inv_open:
                 self.inv_open = True

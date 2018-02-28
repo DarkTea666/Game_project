@@ -106,9 +106,9 @@ gnoll_ranged_dict = {'ranged_damage':3,'range':4,'ammunition':10}
 
 Giant_spider = Monster_type(35,3,1,5,False,False,False,False,
                             'Sprites/enemy.png','Giant_spider')
-Gnoll_hunter = Monster_type(31,2,1,4,False,False,False,gnoll_ranged_dict,
+Gnoll_hunter = Monster_type(30,2,1,4,False,False,False,gnoll_ranged_dict,
                             'Sprites/Gnoll_hunter.png','Gnoll_hunter')
-Gnoll_warrior = Monster_type(51,5,1,6,False,False,False,False,
+Gnoll_warrior = Monster_type(40,5,1,6,False,False,False,False,
                              'img','Gnoll_warrior')
 
 
@@ -154,6 +154,9 @@ bluefire_sceptre_menu = ['''This rather ordinary bluefire sceptre does not requr
 Bluefire_sceptre = Sceptre('Bluefire sceptre', 5, 3, 5,
                             'Sprites/Item_bluefire_sceptre.png', bluefire_sceptre_menu,
                             [])
+
+
+Rung = namedtuple('Ring',['name', 'image', 'text', 'base_stats', 'special'])
 
 
 

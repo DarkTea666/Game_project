@@ -4,6 +4,7 @@ from cocos.actions import MoveBy, CallFunc
 from pyglet.event import EventDispatcher
 
 from functools import partial
+import random
 
 from observer_class import Observer
 from util import util_starting_stats
@@ -19,7 +20,7 @@ class Player(Layer, EventDispatcher, Observer):
         self.max_health = Race.max_health
         self.health = Race.max_health
         self.strength = Race.strength
-        self.damage = Race.strength
+        self.damage = Race.strength/3
         self.defence = 0
         self.level_rate = Race.level_rate#TO DO
         self.regen = Race.regen
@@ -55,7 +56,6 @@ class Player(Layer, EventDispatcher, Observer):
         self.speed = Race.speed
         self.level = 1
         self.exp = 0
-                
         self.direction = (0, 0)#could be used for turning while walking
         self.current_map = False
         
@@ -101,9 +101,12 @@ class Player(Layer, EventDispatcher, Observer):
             result = True
         return result
 
-    def close_range_attack(self,opponent):
-        opponent.health -= self.damage
-        self.moves = self.speed
+    def close_range_attack(self,opponent, miss_chance = 0):
+        if random.random() <= miss_chance:
+            print('You missed!')
+        else:
+            opponent.health -= self.damage
+            self.moves = self.speed
 
     def long_range_attack(self,opponent,long_distance_weapon):
         opponent.health -= long_distance_weapon.damage
@@ -115,8 +118,6 @@ class Player(Layer, EventDispatcher, Observer):
             self.moves = 0
             self.turn += 1
 
-    def update_damage(self):
-        self.damage = self.strength + self.weapon['damage']
 
     def add_regen(self):
         self.health += self.regen

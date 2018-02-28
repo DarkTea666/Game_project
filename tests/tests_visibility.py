@@ -1,7 +1,7 @@
 import pyglet
 from unittest import TestCase, main
 
-from visibility import tile_line, distance, one_octant
+from algorithms.algorithms_visibility import tile_line, distance, one_octant
 
 class VisibilityTests(TestCase):
 
@@ -41,7 +41,6 @@ class VisibilityTests(TestCase):
     def test_tile_line239(self):
         self.assertEqual(tile_line(8.5, 4.5, 10.5, 5.5), [(8, 4), (9, 5), (10, 5)])
 
-    #def test_
 
 
 import os
