@@ -6,6 +6,9 @@ from cocos.batch import BatchNode
 
 from functools import partial
 
+def contains(self, x, y):
+    if self.x ...
+
 class ItemMenuLayer(Layer):
     is_event_handler = True
     def __init__(self, the_item, from_equiped_layer = False):
@@ -21,12 +24,7 @@ class ItemMenuLayer(Layer):
         self.y0 = 0
 
         self.description = self.item.menu
-        self.description_labels = []
-        for row in self.description:
-            label = RichLabel(row, (425,500 - 20*self.description.index(row)),
-                             font_size = 14)
-            self.add(label)
-            self.description_labels.append(label)
+        self.make_description_labels()
 
         y = 500 - 20*len(self.description)-20
         for button in self.item.buttons:
@@ -43,6 +41,14 @@ class ItemMenuLayer(Layer):
                 self.add(button_text)
                 self.item_buttons.append((button, y))
                 y -= 40
+
+    def make_description_labels(self):
+        self.description_labels = []
+        for row in self.description:
+            label = RichLabel(row, (425,500 - 20*self.description.index(row)),
+                             font_size = 14)
+            self.add(label)
+            self.description_labels.append(label)
 
     def on_mouse_press(self,x,y,buttons,modifiers):
         non_press = True
