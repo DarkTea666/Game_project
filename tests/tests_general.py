@@ -1,5 +1,6 @@
 '''I need to see the imports!!!'''
 import time
+import unittest
 from unittest import TestCase, main
 from unittest.mock import MagicMock
 
@@ -100,6 +101,7 @@ class TestGeneral(TestCase):
         self.assertNotEqual(self.player.health, self.player.max_health)
 
 
+    @unittest.skip('01.03.2018')
     def test_move_if_close_range_2(self):#no
         self.mob1.position = (9 + 1) * 50, (len(self.map_layer.map) - 7) * 50
         self.play_layer.add(self.mob1)
@@ -109,6 +111,7 @@ class TestGeneral(TestCase):
         self.assertEqual(self.mob1.position, ((10+1)*50, (len(self.map_layer.map)-8)*50))
 
 
+    @unittest.skip('01.03.2018')
     def test_player_move_if_possible_1(self):#no
         self.mob1.position = (9 + 1) * 50, (len(self.map_layer.map) - 7) * 50
         self.play_layer.add(self.mob1)
@@ -119,6 +122,7 @@ class TestGeneral(TestCase):
         self.assertEqual(self.player.race_sprite.position, ((11+1)*50, (len(self.map_layer.map)-8)*50))
 
 
+    @unittest.skip('01.03.2018')
     def test_player_move_if_possible_2(self):#no
         self.mob1.position = (9+1)*50, (len(self.map_layer.map)-7)*50
         self.play_layer.add(self.mob1)
