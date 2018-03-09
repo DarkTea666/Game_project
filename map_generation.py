@@ -10,8 +10,8 @@ from observer_class import Observer
 class Tile(Sprite):
     def __init__(self, image, level, passable,
                  water = False,void = False,
-                 pillar = False,vegetation = False,
-                 cracked = False,floor = False,
+                 vegetation = False,
+                 cracked = False,
                  extend_dict = {'l':0, 'r':0, 'u':0, 'd':0},
                  exit = False, entrance = False):
         super(Tile, self).__init__(image)
@@ -23,22 +23,20 @@ class Tile(Sprite):
         self.passable = passable
         self.water = water
         self.void = void
-        self.pillar = pillar
         self.vegetation = vegetation
         self.cracked = cracked
-        self.floor = floor
         self.extend_dict = extend_dict
 
 
-class LevelMap(Layer):#, Observer):
+class LevelMap(Layer):
     def __init__(self, level, subject1 = False, subject2 = False):
         Layer.__init__(self)
-        #Observer.__init__(self, subject1=player1, subject2=play_layer)
 
         self.map = []
+        self.tile_map = []
         self.level = level
-        self.special_images = []#for putting non-standart walls and floor
-                                #in the level database
+        self.special_images = []
+
         batch1 = BatchNode()
         self.batch1 = batch1
         self.add(batch1)
@@ -69,16 +67,13 @@ class LevelMap(Layer):#, Observer):
         for x,y in directions:
             if self.in_bounds(i+y,j+x):
                 values.append((i+y,j+x,self[i+y][j+x]))
-        return values 
+        return values
 
-    def get_special_image(self,i,j):#for database-storing maps
-        result = 0
-        for (p,q,image) in self.special_images:
-            if (p,q) == (i,j):
-                result = image
-        return result
-            
-    
+    def map_to_tile_map(self):
+        pass
+        #for i in range()
+        #finish this
+
     def smooth(self):
         new_map = self.map
         for i in range(len(self.map)):
@@ -110,19 +105,21 @@ class LevelMap(Layer):#, Observer):
             for i in range(5,11):#for better connectivity
                 for j in range(8,14):
                     self[i][j] = 0
-            
-            T0 = Tile('Sprites/Temp_grass_floor.png',1,True,
-                      extend_dict =  {'l':'Sprites/Right_ext_grass.png',
-                                     'r':'Sprites/Left_ext_grass.png',
-                                     'u':0,
-                                     'd':0})
-            T1 = Tile('Sprites/Forest_wall.png',1,False,
-                      extend_dict = {'l':0,
-                                     'r':0,
-                                     'u':0,
-                                     'd':0})
-            if draw_map:
-                self.draw_main_map(T0,T1,True,True)
+            #tile_map
+            self.tile_map = [[False for j in range(0, len(self.map[0]))]
+                             for i in range(len(self.map))]
+            for i in range(len(self.map)):
+                for j in range(len(self[0])):#tile_map
+                    if self[i][j] == 0:
+                        T0 = Tile('Sprites/Temp_grass_floor.png', 1, True,
+                                  extend_dict={'l': 'Sprites/Right_ext_grass.png',
+                                               'r': 'Sprites/Left_ext_grass.png',
+                                               'u': 0,
+                                               'd': 0})
+                        self.tile_map[i][j] = T0
+                    if self.map[i][j] == 1:
+                        T1 = Tile('Sprites/Forest_wall.png', 1, False)
+                        self.tile_map[i][j] = T1#tile_map
 
             exit_key = True
             while exit_key:#make this a little bit better
@@ -131,13 +128,14 @@ class LevelMap(Layer):#, Observer):
                         if self.neighbors(i,j).count(0) == 3 and self[i][j] == 1 and exit_key:
                             if randrange(10) == 5:
                                 exit_key = False
-                                image = Sprite('Sprites/Forest_exit_tile.png')
-                                image.scale = 0.05
-                                image.position = (j+1)*50, (len(self.map)-i)*50
-                                self.add(image)#.batch1.add(image)
-                                self.special_images.append((i,j,image))
+                                image = 'Sprites/Forest_exit_tile.png'
+                                tile = Tile(image, 1, True, exit = True)
+                                tile.scale = 0.05
+                                tile.position = (j+1)*50, (len(self.map)-i)*50
+                                #self.add(tile)
+                                self.special_images.append( (i,j,str(image)) )
                                 self[i][j] = 'f'
-
+                                self.tile_map[i][j] = tile
             #extra stuff:
             for i in range(0,len(self.map)):
                 for j in range(0,len(self.map[0])):
@@ -146,50 +144,42 @@ class LevelMap(Layer):#, Observer):
                      (i != 7 or j != 11) and (i != 6 or j != 12):
                         self[i][j] = 1
                         image = 'Sprites/Forest_Boulder_tile_decor.png'
-                        self.special_images.append((i,j,image))
-                        
                         boulder = Tile(image,1,False)
-                        boulder.position = (j+1)*50, (len(self.map)-i)*50
-                        boulder.scale = 0.049
-                        self.add(boulder)#.batch1.add(boulder)
+                        self.tile_map[i][j] = boulder
+            if draw_map:
+                self.draw_map(T0, T1, overlays1=True, overlays0=True)
 
             
-    def draw_main_map(self,T0,T1,overlays1,overlays0):
+    def draw_map(self, T0, T1, overlays1 = False, overlays0 = False):
         extends = [[{'l':0, 'r':0, 'u':0, 'd':0}
                     for i in range(0,len(self.map[0]))]
                     for j in range(0,len(self.map))]
         d = {'l':(0, -1), 'r':(0, 1), 'd':(1, 0), 'u':(-1, 0)}
-
         for i in range(0,len(self.map)):
             for j in range(0,len(self.map[0])):
-                
-                if self[i][j] == 1:
-                    tile = Tile(T1.image,T1.level,T1.passable,
-                                extend_dict = T1.extend_dict)
+                tile = self.tile_map[i][j]
+                tile.position = (j+1)*50, (len(self.map)-i)*50
+                tile.scale = 0.049
+                self.batch1.add(tile)
+                if tile.image == T1.image:
                     if overlays1:#mark overlaying textures
                         for direction, displacement in d.items():
                             x, y = displacement
                             if T1.extend_dict[direction] != 0 and \
                                self.in_bounds(i+x,j+y) and \
-                               self[i+x][j+y] == 0:
+                               self.tile_map[i+x][j+y].image == T0.image:
                                 extends[i][j][direction] = \
                                        Sprite(T1.extend_dict[direction])
                                 
-                elif self[i][j] == 0:
-                    tile = Tile(T0.image,T0.level,T0.passable,
-                                extend_dict = T0.extend_dict)
+                elif tile.image == T0.image:
                     if overlays0:#mark overlaying textures
                         for direction, displacement in d.items():
                             x, y = displacement
                             if T0.extend_dict[direction] != 0 and \
                                self.in_bounds(i+x,j+y) and \
-                               self[i+x][j+y] == 1:
+                               self.tile_map[i+x][j+y].image == T1.image:
                                 extends[i][j][direction] = \
                                        Sprite(T0.extend_dict[direction])
-                #draw the tile
-                tile.position = (j+1)*50, (len(self.map)-i)*50
-                tile.scale = 0.049
-                self.batch1.add(tile)
 
         #draw the overlays
         for i in range(0,len(self.map)):
@@ -202,19 +192,6 @@ class LevelMap(Layer):#, Observer):
                         ext.scale = 0.049
                         self.batch2.add(ext)
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                                   
-            
-        
-            
-
-    
-
 
 
 

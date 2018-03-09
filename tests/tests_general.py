@@ -58,7 +58,7 @@ class TestGeneral(TestCase):
         self.mob1 = Monster(t.monster_sprite, t, 1)
         self.mob1.position = (10 + 1) * 50, (len(self.map_layer.map) - 7) * 50
 
-        main_scene = MainScene()
+        main_scene = FirstScene()
 
     def tearDown(self):
             self.window.close()

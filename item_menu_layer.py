@@ -6,8 +6,6 @@ from cocos.batch import BatchNode
 
 from functools import partial
 
-def contains(self, x, y):
-    if self.x ...
 
 class ItemMenuLayer(Layer):
     is_event_handler = True

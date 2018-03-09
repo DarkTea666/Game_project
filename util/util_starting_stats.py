@@ -112,7 +112,7 @@ Gnoll_warrior = Monster_type(40,5,1,6,False,False,False,False,
                              'img','Gnoll_warrior')
 
 
-#TO DO: MAKE MORE
+All_mobs = [Giant_spider, Gnoll_hunter, Gnoll_warrior]#for recreating the mobs from the database
 
 #------------------------Items--------------------------------------------------
 Weapon = namedtuple('Weapon',

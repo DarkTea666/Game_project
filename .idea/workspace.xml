@@ -1,28 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/map_generation.py" line="152" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba14ea9e-842f-47a3-b3a8-ed97bcdff6bd" name="Default" comment="Made some more tests, also run_tests.bat works.&#10;missiles finally turn in the right direction">
-      <change beforePath="" afterPath="$PROJECT_DIR$/items/items_sceptres.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/items/items_weapons.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/tests/tests_algorythms.py" />
+    <list default="true" id="ba14ea9e-842f-47a3-b3a8-ed97bcdff6bd" name="Default" comment="Some minor updates, more tests, player stats are now shown on screen">
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/tests_level_database.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/algorithms/algorithms_pathfinding.py" afterPath="$PROJECT_DIR$/algorithms/algorithms_pathfinding.py" />
-      <change beforePath="$PROJECT_DIR$/algorithms/algorithms_visibility.py" afterPath="$PROJECT_DIR$/algorithms/algorithms_visibility.py" />
-      <change beforePath="$PROJECT_DIR$/create_character.py" afterPath="$PROJECT_DIR$/create_character.py" />
-      <change beforePath="$PROJECT_DIR$/create_monster.py" afterPath="$PROJECT_DIR$/create_monster.py" />
-      <change beforePath="$PROJECT_DIR$/effect_layer.py" afterPath="$PROJECT_DIR$/effect_layer.py" />
-      <change beforePath="$PROJECT_DIR$/equiped_layer.py" afterPath="$PROJECT_DIR$/equiped_layer.py" />
-      <change beforePath="$PROJECT_DIR$/interract_layer.py" afterPath="$PROJECT_DIR$/interract_layer.py" />
-      <change beforePath="$PROJECT_DIR$/items/items.py" afterPath="$PROJECT_DIR$/items/items_base.py" />
+      <change beforePath="$PROJECT_DIR$/Sprites/Forest_Boulder_tile_decor.png" afterPath="$PROJECT_DIR$/Sprites/Forest_Boulder_tile_decor.png" />
+      <change beforePath="$PROJECT_DIR$/database_ideas.py" afterPath="$PROJECT_DIR$/database_ideas.py" />
+      <change beforePath="$PROJECT_DIR$/item_menu_layer.py" afterPath="$PROJECT_DIR$/item_menu_layer.py" />
       <change beforePath="$PROJECT_DIR$/main_scene.py" afterPath="$PROJECT_DIR$/main_scene.py" />
+      <change beforePath="$PROJECT_DIR$/map_generation.py" afterPath="$PROJECT_DIR$/map_generation.py" />
+      <change beforePath="$PROJECT_DIR$/map_save.db" afterPath="$PROJECT_DIR$/map_save.db" />
       <change beforePath="$PROJECT_DIR$/menu_scene.py" afterPath="$PROJECT_DIR$/menu_scene.py" />
-      <change beforePath="$PROJECT_DIR$/play_layer.py" afterPath="$PROJECT_DIR$/play_layer.py" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_assure_package_works.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/tests/test_item_menu_layer.py" afterPath="$PROJECT_DIR$/tests/tests_item_menu_layer.py" />
+      <change beforePath="$PROJECT_DIR$/tests/tests_algorythms.py" afterPath="$PROJECT_DIR$/tests/tests_algorythms.py" />
       <change beforePath="$PROJECT_DIR$/tests/tests_general.py" afterPath="$PROJECT_DIR$/tests/tests_general.py" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_visibility.py" afterPath="$PROJECT_DIR$/tests/tests_visibility.py" />
       <change beforePath="$PROJECT_DIR$/util/util_starting_stats.py" afterPath="$PROJECT_DIR$/util/util_starting_stats.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,20 +25,23 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Game_project$items.coverage" NAME="items Coverage Results" MODIFIED="1518802323521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/items" />
+    <SUITE FILE_PATH="coverage/Game_project$tests_level_database.coverage" NAME="tests_level_database Coverage Results" MODIFIED="1520289497321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Game_project$equiped_layer.coverage" NAME="equiped_layer Coverage Results" MODIFIED="1516145008959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Game_project$menu_scene.coverage" NAME="menu_scene Coverage Results" MODIFIED="1518879659951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Game_project$play_layer.coverage" NAME="play_layer Coverage Results" MODIFIED="1518794120184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Game_project$Unittests_for_tests_visibility_VisibilityTests_test_distance2.coverage" NAME="Unittests for tests_visibility.VisibilityTests.test_distance2 Coverage Results" MODIFIED="1518794227791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Game_project$create_monster.coverage" NAME="create_monster Coverage Results" MODIFIED="1518794853814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Game_project$Main_program.coverage" NAME="Main_program Coverage Results" MODIFIED="1519857968806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Game_project$Main_program.coverage" NAME="Main_program Coverage Results" MODIFIED="1520591837984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Game_project$working_prototype.coverage" NAME="working_prototype Coverage Results" MODIFIED="1517664430028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Game_project$tests.coverage" NAME="tests Coverage Results" MODIFIED="1517926529812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Game_project$tests_visibility.coverage" NAME="tests_visibility Coverage Results" MODIFIED="1518525263426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/Game_project$Unittests_for_test_item_menu_layer_TestInventory_test_init.coverage" NAME="Unittests for test_item_menu_layer.TestInventory.test_init Coverage Results" MODIFIED="1520023480200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Game_project$main_scene.coverage" NAME="main_scene Coverage Results" MODIFIED="1518794877911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Game_project$Unittests_for_tests_general_TestPassability_test_check_passability_1_1.coverage" NAME="Unittests for tests_general.TestPassability.test_check_passability_1_1 Coverage Results" MODIFIED="1518244380463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Game_project$Main_proramm.coverage" NAME="Main_proramm Coverage Results" MODIFIED="1518524940559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Game_project$selecting_layer.coverage" NAME="selecting_layer Coverage Results" MODIFIED="1518794797637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Game_project$create_character.coverage" NAME="create_character Coverage Results" MODIFIED="1513972329580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Game_project$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1520270819290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/Python/Lib/idlelib" />
     <SUITE FILE_PATH="coverage/Game_project$database_ideas.coverage" NAME="database_ideas Coverage Results" MODIFIED="1513432675044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Game_project$interract_layer.coverage" NAME="interract_layer Coverage Results" MODIFIED="1518795000353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -68,47 +62,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="tests_general.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/tests_general.py">
+      <file leaf-file-name="tests_level_database.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/tests_level_database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3510">
-              <caret line="157" column="44" lean-forward="false" selection-start-line="157" selection-start-column="44" selection-end-line="157" selection-end-column="44" />
+            <state relative-caret-position="297">
+              <caret line="32" column="68" lean-forward="false" selection-start-line="32" selection-start-column="68" selection-end-line="32" selection-end-column="68" />
               <folding>
-                <element signature="e#35#46#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="play_layer.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/play_layer.py">
+      <file leaf-file-name="util_starting_stats.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/util/util_starting_stats.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4023">
-              <caret line="160" column="0" lean-forward="false" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="equiped_layer.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/equiped_layer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create_character.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/create_character.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2754">
-              <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+            <state relative-caret-position="2835">
+              <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -117,8 +87,68 @@
       <file leaf-file-name="create_monster.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/create_monster.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3807">
-              <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
+            <state relative-caret-position="729">
+              <caret line="34" column="25" lean-forward="false" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tests_algorythms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/tests_algorythms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="map_generation.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/map_generation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+                <marker date="1520591837890" expanded="true" signature="4291:5155" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="database_ideas.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database_ideas.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1215">
+              <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+                <marker date="1520603959334" expanded="true" signature="152:255" ph="CREATE TABLE... IF" />
+                <marker date="1520603959334" expanded="true" signature="284:386" ph="CREATE TABLE... IF" />
+                <marker date="1520603959334" expanded="true" signature="410:443" ph="INSERT INTO tiles... " />
+                <marker date="1520603959334" expanded="true" signature="466:498" ph="INSERT INTO mobs... " />
+                <marker date="1520603959334" expanded="true" signature="529:564" ph="SELECT * FRO... tiles" />
+                <marker date="1520603959334" expanded="true" signature="593:627" ph="SELECT * FRO... mobs" />
+                <marker date="1520603959334" expanded="true" signature="646:661" ph="DROP TABLE m... " />
+                <marker date="1520603959334" expanded="true" signature="646:664" ph="DROP TABLE I... " />
+                <marker date="1520603959334" expanded="true" signature="680:696" ph="DROP TABLE t... " />
+                <marker date="1520603959334" expanded="true" signature="680:698" ph="DROP TABLE I... " />
+                <marker date="1520603959334" expanded="true" signature="680:4322" ph="DROP TABLE t... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="equiped_layer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/equiped_layer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2511">
+              <caret line="100" column="25" lean-forward="false" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -127,9 +157,23 @@
       <file leaf-file-name="main_scene.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_scene.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="81">
+              <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu_scene.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/menu_scene.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="28" column="82" lean-forward="false" selection-start-line="28" selection-start-column="82" selection-end-line="28" selection-end-column="82" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -137,32 +181,8 @@
       <file leaf-file-name="Main_program.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main_program.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inventories.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inventories.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="14" column="46" lean-forward="false" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="util_selecting_layer.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/util/util_selecting_layer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="30" column="8" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+            <state relative-caret-position="216">
+              <caret line="11" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -269,7 +289,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database_ideas.py" />
         <option value="$PROJECT_DIR$/player_functions.py" />
         <option value="$PROJECT_DIR$/Path_finding" />
         <option value="$PROJECT_DIR$/path_finding.py" />
@@ -285,7 +304,6 @@
         <option value="$PROJECT_DIR$/Main_proramm.py" />
         <option value="$PROJECT_DIR$/tests.py" />
         <option value="$PROJECT_DIR$/tests_general.py" />
-        <option value="$PROJECT_DIR$/item_menu_layer.py" />
         <option value="$PROJECT_DIR$/visibility.py" />
         <option value="$PROJECT_DIR$/items.py" />
         <option value="$PROJECT_DIR$/starting_stats.py" />
@@ -295,25 +313,31 @@
         <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/visibility_layer.py" />
         <option value="$PROJECT_DIR$/effect_layer.py" />
-        <option value="$PROJECT_DIR$/map_generation.py" />
         <option value="$PROJECT_DIR$/items/items.py" />
         <option value="$PROJECT_DIR$/interract_layer.py" />
         <option value="$PROJECT_DIR$/items/items_sceptres.py" />
         <option value="$PROJECT_DIR$/items/items_weapons.py" />
         <option value="$PROJECT_DIR$/items/items_base.py" />
-        <option value="$PROJECT_DIR$/util/util_starting_stats.py" />
-        <option value="$PROJECT_DIR$/main_scene.py" />
         <option value="$PROJECT_DIR$/tests/tests_visibility.py" />
         <option value="$PROJECT_DIR$/algorithms/algorithms_visibility.py" />
         <option value="$PROJECT_DIR$/algorithms/algorithms_pathfinding.py" />
         <option value="$PROJECT_DIR$/../Unittest_MagicMock_test.py" />
         <option value="$PROJECT_DIR$/create_monster.py" />
-        <option value="$PROJECT_DIR$/tests/tests_algorythms.py" />
         <option value="$PROJECT_DIR$/create_character.py" />
-        <option value="$PROJECT_DIR$/menu_scene.py" />
-        <option value="$PROJECT_DIR$/tests/tests_general.py" />
         <option value="$PROJECT_DIR$/play_layer.py" />
         <option value="$PROJECT_DIR$/equiped_layer.py" />
+        <option value="$PROJECT_DIR$/util/util_starting_stats.py" />
+        <option value="$PROJECT_DIR$/item_menu_layer.py" />
+        <option value="C:/Python/Lib/idlelib/__main__.py" />
+        <option value="$PROJECT_DIR$/main_scene.py" />
+        <option value="$PROJECT_DIR$/tests_level_database.py" />
+        <option value="$PROJECT_DIR$/tests/tests_general.py" />
+        <option value="$PROJECT_DIR$/tests/tests_item_menu_layer.py" />
+        <option value="$PROJECT_DIR$/tests/tests_algorythms.py" />
+        <option value="$PROJECT_DIR$/menu_scene.py" />
+        <option value="$PROJECT_DIR$/map_generation.py" />
+        <option value="$PROJECT_DIR$/database_ideas.py" />
+        <option value="$PROJECT_DIR$/tests/tests_level_database.py" />
       </list>
     </option>
   </component>
@@ -324,10 +348,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-35" />
-    <option name="y" value="555" />
+    <option name="x" value="-15" />
+    <option name="y" value="-12" />
     <option name="width" value="1942" />
-    <option name="height" value="438" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -364,24 +388,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Game_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Game_project" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Game_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Game_project" type="462c0819:PsiDirectoryNode" />
-              <item name="algorithms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Game_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Game_project" type="462c0819:PsiDirectoryNode" />
-              <item name="items" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Game_project" type="b2602c69:ProjectViewProjectNode" />
@@ -397,6 +409,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -409,14 +423,15 @@
     <property name="SearchEverywhereHistoryKey" value="add&#9;null&#9;null&#10;scale&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Python_stuff\Game_project" />
-      <recent name="D:\Python_stuff\Game_project\items" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Python_stuff\Game_project\util" />
       <recent name="D:\Python_stuff\Game_project" />
       <recent name="D:\Python_stuff\Game_project\algorithms" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Python_stuff\Game_project\tests" />
+      <recent name="D:\Python_stuff\Game_project" />
+      <recent name="D:\Python_stuff\Game_project\items" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -451,58 +466,20 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="interract_layer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="__main__" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="C:/Python/Lib/idlelib" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Game_project" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/interract_layer.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="items" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/items" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Game_project" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\Python_stuff\Game_project\items\items_base.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="main_scene" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Game_project" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_scene.py" />
+      <option name="SCRIPT_NAME" value="C:/Python/Lib/idlelib/__main__.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -527,20 +504,54 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="tests_level_database" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Game_project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests_level_database.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Unittests for tests.tests_item_menu_layer.TestInventory.test_init" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Game_project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.tests_item_menu_layer.TestInventory.test_init&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+    </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.Main_program" />
-      <item index="1" class="java.lang.String" itemvalue="Python.main_scene" />
-      <item index="2" class="java.lang.String" itemvalue="Python.menu_scene" />
-      <item index="3" class="java.lang.String" itemvalue="Python.interract_layer" />
-      <item index="4" class="java.lang.String" itemvalue="Python.items" />
+      <item index="1" class="java.lang.String" itemvalue="Python.menu_scene" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for tests.tests_item_menu_layer.TestInventory.test_init" />
+      <item index="3" class="java.lang.String" itemvalue="Python.__main__" />
+      <item index="4" class="java.lang.String" itemvalue="Python.tests_level_database" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.Main_program" />
-        <item index="1" class="java.lang.String" itemvalue="Python.menu_scene" />
-        <item index="2" class="java.lang.String" itemvalue="Python.items" />
-        <item index="3" class="java.lang.String" itemvalue="Python.interract_layer" />
-        <item index="4" class="java.lang.String" itemvalue="Python.main_scene" />
+        <item index="1" class="java.lang.String" itemvalue="Python.tests_level_database" />
+        <item index="2" class="java.lang.String" itemvalue="Python.__main__" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for tests.tests_item_menu_layer.TestInventory.test_init" />
+        <item index="4" class="java.lang.String" itemvalue="Python.menu_scene" />
       </list>
     </recent_temporary>
   </component>
@@ -642,10 +653,20 @@
       <option name="project" value="LOCAL" />
       <updated>1518984598845</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Some minor updates, more tests, player stats are now shown on screen">
+      <created>1519858432215</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1519858432215</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
+    <history-entry file="Unittests_for_test_item_menu_layer_TestInventory_test_init - 2018.03.02 at 23h 44m 43s.xml">
+      <configuration name="Unittests for test_item_menu_layer.TestInventory.test_init" configurationId="tests" />
+    </history-entry>
     <history-entry file="Unittests_for_tests_general_TestPassability_test_check_passability_1_1 - 2018.02.10 at 09h 33m 02s.xml">
       <configuration name="Unittests for tests_general.TestPassability.test_check_passability_1_1" configurationId="tests" />
     </history-entry>
@@ -666,28 +687,28 @@
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905483" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905483" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0048335125" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="0" y="0" width="434" height="848" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0042964555" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="0" y="0" width="434" height="848" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.33989072" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="196" y="374" width="1490" height="301" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.35392052" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.327252" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28088078" sideWeight="0.490284" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.33989072" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="196" y="374" width="1490" height="301" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35392052" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.327252" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22019334" sideWeight="0.490284" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17937702" sideWeight="0.509716" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46294186" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2622577" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905483" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -756,7 +777,8 @@
     <MESSAGE value="Первый этап: разнесение файлов" />
     <MESSAGE value="making items.py into a package called items" />
     <MESSAGE value="Made some more tests, also run_tests.bat works.&#10;missiles finally turn in the right direction" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made some more tests, also run_tests.bat works.&#10;missiles finally turn in the right direction" />
+    <MESSAGE value="Some minor updates, more tests, player stats are now shown on screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some minor updates, more tests, player stats are now shown on screen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -770,44 +792,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="20" />
+      <option name="time" value="21" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/items.py" />
-    <entry file="file://$PROJECT_DIR$/interract_layer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="10" column="67" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/visibility_layer.py" />
-    <entry file="file://C:/Python/Lib/tkinter/ttk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="1065" column="6" lean-forward="false" selection-start-line="1065" selection-start-column="6" selection-end-line="1065" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.3/system/python_stubs/-234514117/_ast.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="57" column="6" lean-forward="false" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/visibility_layer.py" />
-    <entry file="file://$PROJECT_DIR$/working_prototype.py" />
-    <entry file="file://$PROJECT_DIR$/tests/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests.py" />
     <entry file="file://$PROJECT_DIR$/tests_general.py" />
     <entry file="file://$PROJECT_DIR$/Sprites/Warlock.png">
       <provider selected="true" editor-type-id="images">
@@ -859,27 +848,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/map_generation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2862">
-          <caret line="113" column="31" lean-forward="false" selection-start-line="113" selection-start-column="31" selection-end-line="113" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#31#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/items/items_weapons.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="702">
           <caret line="31" column="39" lean-forward="false" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/tests_visibility.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1053">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -954,13 +926,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/tests_assure_package_works.py" />
-    <entry file="file://$PROJECT_DIR$/tests/tests_algorythms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1566">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/visibility_layer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
@@ -975,13 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/util_starting_stats.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4050">
-          <caret line="153" column="16" lean-forward="false" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/items/items_base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1323">
@@ -989,43 +947,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/menu_scene.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/item_menu_layer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="46" column="8" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inventories.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="14" column="46" lean-forward="false" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create_monster.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3807">
-          <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create_character.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2754">
-          <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1033,35 +958,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
           <caret line="30" column="8" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_scene.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/tests_general.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3510">
-          <caret line="157" column="44" lean-forward="false" selection-start-line="157" selection-start-column="44" selection-end-line="157" selection-end-column="44" />
-          <folding>
-            <element signature="e#35#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Main_program.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1074,20 +970,178 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/play_layer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4023">
-          <caret line="160" column="0" lean-forward="false" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="3456">
+          <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create_character.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Secret_folder/Thing">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python/Lib/idlelib/pyshell.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="180" column="24" lean-forward="true" selection-start-line="180" selection-start-column="24" selection-end-line="180" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python/Lib/site-packages/IPython/__main__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python/Lib/idlelib/__main__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="29" lean-forward="true" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/tests_visibility.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1053">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests_level_database.py" />
+    <entry file="file://$PROJECT_DIR$/[18].py" />
+    <entry file="file://$PROJECT_DIR$/tests/tests_item_menu_layer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/tests_general.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2376">
+          <caret line="116" column="14" lean-forward="false" selection-start-line="116" selection-start-column="14" selection-end-line="116" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/item_menu_layer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/equiped_layer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+        <state relative-caret-position="2511">
+          <caret line="100" column="25" lean-forward="false" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/tests_algorythms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_scene.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/menu_scene.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="28" column="82" lean-forward="false" selection-start-line="28" selection-start-column="82" selection-end-line="28" selection-end-column="82" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create_monster.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="729">
+          <caret line="34" column="25" lean-forward="false" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map_generation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+            <marker date="1520591837890" expanded="true" signature="4291:5155" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/util_starting_stats.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2835">
+          <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main_program.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="11" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database_ideas.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1215">
+          <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+            <marker date="1520603959334" expanded="true" signature="152:255" ph="CREATE TABLE... IF" />
+            <marker date="1520603959334" expanded="true" signature="284:386" ph="CREATE TABLE... IF" />
+            <marker date="1520603959334" expanded="true" signature="410:443" ph="INSERT INTO tiles... " />
+            <marker date="1520603959334" expanded="true" signature="466:498" ph="INSERT INTO mobs... " />
+            <marker date="1520603959334" expanded="true" signature="529:564" ph="SELECT * FRO... tiles" />
+            <marker date="1520603959334" expanded="true" signature="593:627" ph="SELECT * FRO... mobs" />
+            <marker date="1520603959334" expanded="true" signature="646:661" ph="DROP TABLE m... " />
+            <marker date="1520603959334" expanded="true" signature="646:664" ph="DROP TABLE I... " />
+            <marker date="1520603959334" expanded="true" signature="680:696" ph="DROP TABLE t... " />
+            <marker date="1520603959334" expanded="true" signature="680:698" ph="DROP TABLE I... " />
+            <marker date="1520603959334" expanded="true" signature="680:4322" ph="DROP TABLE t... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/tests_level_database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="32" column="68" lean-forward="false" selection-start-line="32" selection-start-column="68" selection-end-line="32" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>

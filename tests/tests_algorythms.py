@@ -25,7 +25,7 @@ class TestAlgorithm(TestCase):
 
         self.play_layer = PlayingLayer(self.player, self.map_layer, subj1=self.player)
 
-        main_scene = MainScene()
+        main_scene = FirstScene()
 
     def tearDown(self):
         self.window.close()
@@ -69,3 +69,5 @@ class TestAlgorithm(TestCase):
         self.assertEqual(pathfind_to_target(self.map_layer, 8, 11, 12, 19, [(9,12), (9,11), (9,10), (8,10), (7,10),
                                                                             (7,11), (7,12), (8,12)]),[])
 
+if __name__ == '__main__':
+    unittest.main()
