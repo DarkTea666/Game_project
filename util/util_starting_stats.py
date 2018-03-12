@@ -102,7 +102,7 @@ Monster_type = namedtuple('Monster_type',
                            'spectral', 'undead', 'flying', 'ranged',
                            'monster_sprite', 'name'])# +special_behaviour?
 
-gnoll_ranged_dict = {'ranged_damage':3,'range':4,'ammunition':10}
+gnoll_ranged_dict = {'projectile_image':'img','ranged_damage':3,'range':4,'ammunition':10}
 
 Giant_spider = Monster_type(35,3,1,5,False,False,False,False,
                             'Sprites/enemy.png','Giant_spider')
@@ -112,7 +112,7 @@ Gnoll_warrior = Monster_type(40,5,1,6,False,False,False,False,
                              'img','Gnoll_warrior')
 
 
-All_mobs = [Giant_spider, Gnoll_hunter, Gnoll_warrior]#for recreating the mobs from the database
+All_mobs = {'Giant_spider':Giant_spider, 'Gnoll_hunter':Gnoll_hunter, 'Gnoll_warrior':Gnoll_warrior}
 
 #------------------------Items--------------------------------------------------
 Weapon = namedtuple('Weapon',

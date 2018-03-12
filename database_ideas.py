@@ -1,9 +1,15 @@
 from cocos.sprite import Sprite
 import json
+from json import JSONEncoder
 import sqlite3
 
 from create_monster import Monster
 from map_generation import Tile
+
+def _default(self, obj):
+    return getattr(obj.__class__, "to_json", _default.default)(obj)
+_default.default = JSONEncoder().default
+JSONEncoder.default = _default
 
 create_tile_table = '''
 CREATE TABLE
@@ -46,25 +52,6 @@ WHERE level = ?'''
 del_mobs = '''DROP TABLE mobs'''
 del_tiles = '''DROP TABLE tiles'''
 
-def encode_tile(obj):
-    if isinstance(obj, Tile):
-        return {'__Tile__':True, 'image':obj.image, 'level':obj.level, 'exit':obj.exit,
-                'entrance':obj.entrance, 'passable':obj.passable, 'water':obj.water,
-                'void':obj.void, 'vegetation':obj.vegetation, 'cracked':obj.cracked,
-                'extend_dict':obj.extend_dict}
-    raise TypeError(repr(obj) + " is not JSON serializable")
-
-def as_tile(dct):
-    if '__Tile__' in dct:
-        return Tile(dct['image'], dct['level'], dct['passable'], exit=dct['exit'], entrance=dct['entrance'],
-                    water=dct['water'], void=dct['void'], vegetation=dct['vegetation'], cracked=dct['cracked'],
-                    extend_dict=dct['extend_dict'])
-    return dct
-
-def encode_mob(obj):
-    if isinstance(obj, Monster):
-        return {}#TODO: change to attrs
-    raise TypeError(repr(obj) + " is not JSON serialisable")
 
 def clear_level_database():
     with sqlite3.connect('map_save.db') as db:
@@ -77,67 +64,66 @@ def move_level_to_database(map_layer,mobs):
         db.execute(create_mob_table)
         for i in range(0,len(map_layer.map)):
             for j in range(0,len(map_layer.map[0])):
-                json_tile = json.dumps()#TODO: finish this. remake the way the level restores
-                #TODO: from map_layer.tile_map
+                json_tile = json.dumps(map_layer.tile_map[i][j])
                 db.execute(insert_tile,[i,j,map_layer.level,json_tile])
         for mob in mobs:
             i = mob.tile()['i']+len(map_layer.map)
             j = mob.tile()['j']
-            db.execute(insert_mob,[i,j,map_layer.level,
-                                   mob.health, mob.name])
+            json_mob = json.dumps(mob)
+            db.execute(insert_mob,[i,j,map_layer.level,json_mob])
         db.commit()
 
 
 def find_level_size(tiles):
     max_i, max_j = 0,0
     for tile in tiles:
-        i,j,_,_,_ = tile
+        i,j,_,_ = tile
         if max_i < i:
             max_i = i
         if max_j < j:
             max_j = j
     return(max_i+1, max_j+1)
 
-def restore_level_from_database(map_layer):
+def restore_level_from_database(map_layer):#TODO: check that this works in main_scene. remove play_layer, remamber,
+    #TODO: items are not saved, and should dissapear when loading a laval for a second time. then restore mobs
     with sqlite3.connect('map_save.db') as db:
         tiles_ = db.execute(select_level_tiles, [map_layer.level])
         tiles = []
         for tile in tiles_:#the cursor itself is only iterable once
-            tiles.append(tile)
+            i,j,level,tile_text = tile
+            tiles.append( [i, j, level, Tile.from_json(tile_text)] )
+
         max_ij = find_level_size(tiles)
         map_layer.map = [ [ [] for j in range(0,max_ij[1]) ] for i in range(0,max_ij[0])]
-        T0 = Tile('Sprites/Temp_grass_floor.png', 1, True,extend_dict={'l': 'Sprites/Right_ext_grass.png',
-                                                        'r': 'Sprites/Left_ext_grass.png','u': 0,'d': 0})
-        T1 = Tile('Sprites/Forest_wall.png', 1, False,extend_dict={'l': 0,'r': 0,'u': 0,'d': 0})
+        map_layer.tile_map = [ [ [] for j in range(0,max_ij[1]) ] for i in range(0,max_ij[0])]
+
         for tile in tiles:
-            i, j, value, level, image = tile
-            map_layer[i][j] = value
-        for row in map_layer.map:#for now
-            print(row)
+            i, j, level, tile_obj = tile
+            map_layer.tile_map[i][j] = tile_obj
+            if tile_obj.passable == True:
+                map_layer[i][j] = 0
+                T0 = map_layer.tile_map[i][j]
+            elif tile_obj.passable == False:
+                map_layer[i][j] = 1
+                T1 = map_layer.tile_map[i][j]
+            if tile_obj.exit == True:
+                map_layer[i][j] = 'f'
+            elif tile_obj.entrance == True:
+                map_layer[i][j] = 'b'#as in forward and backwards
 
-        map_layer.draw_main_map(T0, T1, overlays1 = True, overlays0 = True)
-        for tile in tiles:#TODO: remove that
-            image = tile[4]
-            if image != '0':
-                i,j = tile[0], tile[1]
-                pos = (j+1)*50, (len(map_layer.map)-i)*50
-                print(image)
-                special_sprite = Sprite(image, position = pos, scale = 0.049)
-                map_layer.add(special_sprite)
-        #make adjustments to decorations and exits/entrances
+        map_layer.draw_map(T0, T1, overlays1 = True, overlays0 = True)
 
-def restore_mobs_from_database(play_layer):
+def restore_mobs_from_database(play_layer,map_layer):
     with sqlite3.connect('map_save.db') as db:
-        mobs = db.execute(select_level_mobs, [map_layer.level])
-        mobs_list = []
+        mobs_ = db.execute(select_level_mobs, [map_layer.level])
+        mobs = []
+        for mob in mobs_:#the cursor itself is only iterable once
+            i,j,level,mob_text = mob
+            mob = (i, j, level, Monster.from_json(mob_text))
+            mobs.append(mob)
+        m_len = len(map_layer.map)
         for mob in mobs:
-            actual_mob = Monster()
-
-        #finish this
-
-
-
-
-
-
+            i, j, level, actual_mob = mob
+            mob.position = (j+1)*50, (m_len-i)*50
+            play_layer.add(actual_mob)
 

@@ -4,6 +4,7 @@ from cocos.actions import MoveBy, CallFunc
 from random import randrange
 
 from util import util_starting_stats
+from util_starting_stats import All_mobs
 from algorithms.algorithms_pathfinding import pathfind_to_target
 from algorithms.algorithms_visibility import calculate_visibility
 #import loot_tables
@@ -13,6 +14,7 @@ class Monster(Sprite): #non-boss
     def __init__(self, image, monster_type, dungeon_level, special_stats = False):
         Sprite.__init__(self, image)
 
+        self.image_path = image
         #Universal attributes:
         self.moves = 0
         self.speed = monster_type.speed
@@ -33,8 +35,23 @@ class Monster(Sprite): #non-boss
         self.loot = False
 
         self.scale = 0.05
-       
-    
+
+    def to_json(obj):
+        return {'type': 'Monster', 'image_path': obj.image_path, 'level': obj.dungeon_level, 'moves': obj.moves,
+                'speed': obj.speed, 'name': obj.name, 'health': obj.health,
+                'defence': obj.defence, 'damage': obj.damage, 'loot': obj.loot,
+                'ranged': obj.ranged}
+    @classmethod
+    def from_json(cls, striong):
+        attrs = json.loads(string)
+        if attrs['type'] == cls.__name__:
+            mob = cls(attrs['image_path'], All_mobs[attrs['name']], attrs['level'])
+            mob.health = attrs['health'];mob.damage = attrs['damage'];mob.defance = attrs['defence']
+            mob.loot = attrs['loot'];mob.ranged = attrs['ranged'];mob.moves = attrs['moves'];mob.speed = attrs['speed']
+            return mob
+        raise TypeError("Monster's from_json classmethod doesn't work")
+
+
     def tile(self):
         p,q = self.position
         return {'i':int(-q/50), 'j':int(p/50-1)}

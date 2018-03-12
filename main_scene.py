@@ -53,7 +53,7 @@ class FirstScene(Scene):
         self.levels_visited = [1]#later will be level 0
 
         #database testing zone
-        '''
+
         clear_level_database()
         move_level_to_database(map_layer, play_layer.mobs)
 
@@ -61,7 +61,7 @@ class FirstScene(Scene):
         map_layer = LevelMap(1, subject1=player1)
         restore_level_from_database(map_layer)
         self.add(map_layer, z=0)
-        '''
+
 class CurrentScene(Scene):
     def __init__(self, player, level, levels_visited):
         Scene.__init__(self)

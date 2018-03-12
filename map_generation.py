@@ -3,6 +3,7 @@ from cocos.layer import Layer
 from cocos.batch import BatchNode
 
 from random import randrange
+import json
 
 from util import util_starting_stats as starting_stats
 from observer_class import Observer
@@ -14,8 +15,9 @@ class Tile(Sprite):
                  cracked = False,
                  extend_dict = {'l':0, 'r':0, 'u':0, 'd':0},
                  exit = False, entrance = False):
-        super(Tile, self).__init__(image)
+        Sprite.__init__(self, image)
 
+        self.image_path = image
         self.level = level
         self.exit = exit
         self.entrance = entrance
@@ -26,6 +28,21 @@ class Tile(Sprite):
         self.vegetation = vegetation
         self.cracked = cracked
         self.extend_dict = extend_dict
+
+    def to_json(obj):
+        return {'type': 'Tile', 'image_path': obj.image_path, 'level': obj.level, 'exit': obj.exit,
+                'entrance': obj.entrance, 'passable': obj.passable, 'water': obj.water,
+                'void': obj.void, 'vegetation': obj.vegetation, 'cracked': obj.cracked,
+                'extend_dict': obj.extend_dict}
+    @classmethod
+    def from_json(cls, string):
+        attrs = json.loads(string)
+        if attrs['type'] == cls.__name__:
+            return cls(attrs['image_path'], attrs['level'], attrs['passable'], exit=attrs['exit'],
+                entrance=attrs['entrance'],  water=attrs['water'], void=attrs['void'],
+                vegetation=attrs['vegetation'], cracked=attrs['cracked'], extend_dict=attrs['extend_dict'])
+        raise TypeError("Tile's from_json classmethod doesn't work")
+
 
 
 class LevelMap(Layer):
