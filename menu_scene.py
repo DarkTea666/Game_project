@@ -1,6 +1,5 @@
 from pyglet.event import EventDispatcher
 
-
 from cocos import layer
 from cocos.text import RichLabel
 
@@ -30,17 +29,13 @@ class FirstLayer(layer.Layer, EventDispatcher):
             button_y -= 100
             self.add(button)
 
-    def on_mouse_motion(self,x,y,dx,dy):
-        #print(x,y)
-        pass
-        
     def on_mouse_press(self,x,y,buttons,modifiers):
         button_y = 750
         for button in self.race_selection_dict:
             if 1000<x<1250 and button_y-20<y<button_y+20:
                 chosen_race = self.race_selection_dict[button][0]
                 print(chosen_race)
-                first_scene = FirstScene(chosen_race = chosen_race)
+                first_scene = FirstScene(chosen_race = chosen_race, chosen_class = util_starting_stats.Warlock)
                 director.push(first_scene)
             button_y -= 100
 

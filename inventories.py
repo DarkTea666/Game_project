@@ -12,13 +12,13 @@ from item_menu_layer import ItemMenuLayer
 
 class InventoryLayer(Layer, Observer):
     is_event_handler = True
-    def __init__(self, play_layer, interactive_layer, equip_layer):
+    def __init__(self, equip_layer):
         Layer.__init__(self)
         self.handling_clicks = True
 
-        self.play_layer = play_layer
+        self.play_layer = False
         self.equip_layer = equip_layer
-        self.interactive_layer = interactive_layer
+        self.interactive_layer = False
         self.k = 1
         self.item_menu = False
 

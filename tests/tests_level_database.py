@@ -20,7 +20,7 @@ class TestDatabase(TestCase):
         with self.assertRaises(TypeError):
             json.dumps(complex(9,3), default = encode_tile)
 
-    @patch('map_generation.Sprite.__init__', return_value = sentinel.sprite_init)
+    @patch('map_generation.Sprite.__init__')
     def test_encode_tile2(self, m_sprite_init):
         tile = Tile('Sprites/Human_Warlock.png', 1, True)
         #import pdb;pdb.set_trace()

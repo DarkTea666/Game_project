@@ -92,7 +92,6 @@ def restore_level_from_database(map_layer):#TODO: check that this works in main_
         for tile in tiles_:#the cursor itself is only iterable once
             i,j,level,tile_text = tile
             tiles.append( [i, j, level, Tile.from_json(tile_text)] )
-
         max_ij = find_level_size(tiles)
         map_layer.map = [ [ [] for j in range(0,max_ij[1]) ] for i in range(0,max_ij[0])]
         map_layer.tile_map = [ [ [] for j in range(0,max_ij[1]) ] for i in range(0,max_ij[0])]
@@ -124,6 +123,7 @@ def restore_mobs_from_database(play_layer,map_layer):
         m_len = len(map_layer.map)
         for mob in mobs:
             i, j, level, actual_mob = mob
-            mob.position = (j+1)*50, (m_len-i)*50
+            actual_mob.position = (j+1)*50, (m_len-i)*50
             play_layer.add(actual_mob)
+            play_layer.mobs.append(actual_mob)
 

@@ -2,9 +2,11 @@ from cocos.sprite import Sprite
 from cocos.actions import MoveBy, CallFunc
 
 from random import randrange
+import json
+
 
 from util import util_starting_stats
-from util_starting_stats import All_mobs
+from util.util_starting_stats import All_mobs
 from algorithms.algorithms_pathfinding import pathfind_to_target
 from algorithms.algorithms_visibility import calculate_visibility
 #import loot_tables
@@ -42,7 +44,7 @@ class Monster(Sprite): #non-boss
                 'defence': obj.defence, 'damage': obj.damage, 'loot': obj.loot,
                 'ranged': obj.ranged}
     @classmethod
-    def from_json(cls, striong):
+    def from_json(cls, string):
         attrs = json.loads(string)
         if attrs['type'] == cls.__name__:
             mob = cls(attrs['image_path'], All_mobs[attrs['name']], attrs['level'])
