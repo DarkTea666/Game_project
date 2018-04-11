@@ -37,18 +37,25 @@ def distance(i0, j0, i1, j1):
 def tile_line_vis(w_x, w_y, j, i, map_layer):
     line_list = tile_line(w_x+0.5, w_y+0.5, j+0.5, i+0.5)
     key = True
-    stop_tile = line_list[0]#in case of starting from a wall (shouldn't happen) 
+    result_list = []
+    
+    stop_tile = line_list[0]
+    j0, i0 = line_list[0]
+    
     for tile in line_list:
         j, i = tile
-        if map_layer[i][j] != 0 and key == True or tile == line_list[-1]:
+        if map_layer[i][j] != 0 and key == True and (i,j) != (i0,j0) or tile == line_list[-1]:
             key = False
             stop_tile = tile
             break
+
+    
     stop_ind = line_list.index(stop_tile)
-    result_list = []
     for ind in range(0,stop_ind+1):
         result_list.append(line_list[ind])
+
     result_list = [(y,x) for x,y in result_list]
+
     return result_list
 
 
@@ -83,6 +90,10 @@ def calculate_visibility(w_i, w_j, map_layer, visualise_in_text = False, print_a
             print(*row)
     vis_map = [[map_layer[i][j] if ((i,j) in vis_list) else '#' for j
              in range(0, len(map_layer[0]))] for i in range(len(map_layer.map))]
+    for i in range(len(map_layer.map)):
+        for j in range(len(map_layer[0])):
+            if map_layer[i][j] == 'b':
+                vis_map[i][j] == 'b'
     if print_as_list:
         print(vis_map)
     return vis_map

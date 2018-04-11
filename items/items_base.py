@@ -22,7 +22,7 @@ class Item(Sprite):
 
         self.inv_layer = False
 
-    def Drop(self):
+    def delete_from_inventory(self):
         inv_layer = self.inv_layer
         for name, inv in inv_layer.dict_inv.items():
             for row in inv[0]:
@@ -31,9 +31,14 @@ class Item(Sprite):
                     if item_inf != False and item_inf[0] == self:
                         remove_that = (inv[0], inv[0].index(row), item_num)
                         break
-        interact_layer = inv_layer.interactive_layer
         inv_layer.remove(self)
-        remove_that[0][remove_that[1]][remove_that[2]] = False
+        remove_that[0][remove_that[1]][remove_that[2]] = False 
+        
+
+    def Drop(self):
+        inv_layer = self.inv_layer
+        interact_layer = inv_layer.interactive_layer
+        self.delete_from_inventory()
         interact_layer.items.append(self)
         self.position = (inv_layer.play_layer.player.race_sprite.position)
         self.scale = 0.05
@@ -112,6 +117,7 @@ def rotate_missile(missile_sprite, start_i, start_j, end_i, end_j):
                 alpha = -90
     missile_sprite.rotation = alpha
 
+        
 
 
 class Armour(Item):

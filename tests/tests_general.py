@@ -20,7 +20,7 @@ from util import util_starting_stats
 from create_monster import Monster
 from create_character import Player
 from map_generation import LevelMap
-from interract_layer import InteractableLayer
+from interact_layer import InteractableLayer
 from effect_layer import EffectLayer
 from visibility_layer import VisibilityLayer
 from inventories import InventoryLayer

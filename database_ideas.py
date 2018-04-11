@@ -49,9 +49,16 @@ SELECT *
 FROM mobs
 WHERE level = ?'''
 
-del_mobs = '''DROP TABLE mobs'''
-del_tiles = '''DROP TABLE tiles'''
+del_mobs = ''' DROP TABLE IF EXISTS mobs'''
+del_tiles = '''DROP TABLE IF EXISTS tiles'''
 
+del_level_mobs = '''DELETE FROM mobs WHERE level = ?'''
+del_level_tiles = '''DELETE FROM tiles WHERE level = ?'''
+
+def delete_level_from_database(level):
+    with sqlite3.connect('map_save.db') as db:
+        db.execute(del_level_mobs,[level])
+        db.execute(del_level_tiles,[level])
 
 def clear_level_database():
     with sqlite3.connect('map_save.db') as db:

@@ -1,8 +1,10 @@
 from observer_class import Observer
 
 from cocos.layer import Layer
-from items import items_base, items_weapons, items_sceptres
+from items import items_base, items_weapons, items_sceptres, items_misc
 from util import util_starting_stats as starting_stats
+
+
 
 class InteractableLayer(Layer, Observer):#holds items, doors, chests, crates(ex: bookcases)...
     def __init__(self, map_layer, subj1 = False, subj2 = False):
@@ -40,12 +42,12 @@ class InteractableLayer(Layer, Observer):#holds items, doors, chests, crates(ex:
         sword3.position = ((x + 1) * 50, (len(self.map_layer.map) - y) * 50)
         self.add(sword3)
 
-        sword3 = items_weapons.Weapon(starting_stats.Short_sword, (5, 10))
-        self.items.append(sword3)
-        y, x = sword3.tile
-        sword3.scale = 0.05
-        sword3.position = ((x + 1) * 50, (len(self.map_layer.map) - y) * 50)
-        self.add(sword3)
+        level_key = items_misc.LevelKey('Level 1 Key', 'Sprites/Item_Golden_key.png', (5, 10), 1)
+        self.items.append(level_key)
+        y, x = level_key.tile
+        level_key.scale = 0.05
+        level_key.position = ((x + 1) * 50, (len(self.map_layer.map) - y) * 50)
+        self.add(level_key)
 
 
 

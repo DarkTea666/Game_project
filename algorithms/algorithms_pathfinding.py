@@ -32,7 +32,6 @@ def tile_do(tile, map_layer, open_list, closed_list, t_i, t_j, blocked_tiles): #
                 for neighbor_tile in map_layer.neighbor_tiles(tile['i'],
                                                               tile['j']):
                     if neighbor_tile[2] == 0 and (neighbor_tile[0], neighbor_tile[1]) not in blocked_tiles:
-                        ''' and not check_for_mob(mobs, map_layer,neighbor_tile[1],neighbor_tile[0]):'''
                         n_tile = tile_score(map_layer,
                                             neighbor_tile[0],
                                             neighbor_tile[1],
@@ -51,23 +50,26 @@ def tile_do(tile, map_layer, open_list, closed_list, t_i, t_j, blocked_tiles): #
                                     open_list.append(t)
 
 def pathfind_to_target(map_layer, s_i, s_j, t_i, t_j, blocked_tiles):
-
+        stop_key = False 
+        count = 0
         target_tile = tile_score(map_layer, t_i, t_j, t_i, t_j)
         neighbors = map_layer.neighbor_tiles(s_i, s_j)
 
         open_list = [tile_score(map_layer, tile[0], tile[1], t_i, t_j)
                      for tile in neighbors if tile[2] == 0 and (tile[0], tile[1]) not in blocked_tiles]
-        '''and not check_for_mob(mobs, map_layer, tile[1], tile[0])]'''
 
         closed_list = [tile_score(map_layer, s_i, s_j, t_i, t_j)]
+        while in_list(target_tile, open_list) == False and open_list != [] and count <= 100:
+            if count == 100:
+                stop_key = True
+            min_tile = find_min_score(open_list)
+            tile_do(min_tile, map_layer, open_list, closed_list, t_i, t_j, blocked_tiles)
+            count += 1
+        return trace_back_path(map_layer, s_i, s_j, t_i, t_j, open_list, closed_list, stop_key = stop_key)
 
-        while in_list(target_tile, open_list) == False and open_list != []:
-                min_tile = find_min_score(open_list)
-                tile_do(min_tile, map_layer, open_list, closed_list, t_i, t_j, blocked_tiles)
-
-        return trace_back_path(map_layer, s_i, s_j, t_i, t_j, open_list, closed_list)
-
-def trace_back_path(map_layer, s_i, s_j, t_i, t_j, open_list, closed_list):
+def trace_back_path(map_layer, s_i, s_j, t_i, t_j, open_list, closed_list, stop_key = False):
+        if stop_key:
+            return [(s_i,s_j)]
         for tile in open_list:
             if tile['h'] == 0:
                 g = tile['g']
@@ -76,7 +78,7 @@ def trace_back_path(map_layer, s_i, s_j, t_i, t_j, open_list, closed_list):
         jo = t_j
         if open_list != []:
             while g != 0:
-                    for tile in closed_list:
+                    for tile in closed_list:#TODO: local variable 'g' referenced before assignment
                         if tile['g'] == g - 1 and (io,jo,0) in map_layer.neighbor_tiles(tile['i'],tile['j']):
                             key_first = False
                             g = tile['g']
@@ -84,5 +86,7 @@ def trace_back_path(map_layer, s_i, s_j, t_i, t_j, open_list, closed_list):
                             jo = tile['j']
                             path_list.insert(0, (tile['i'], tile['j']))
             path_list.append((t_i, t_j))
+	
+        if path_list == []:
+            path_list = [(s_i,s_j)]
         return path_list
-

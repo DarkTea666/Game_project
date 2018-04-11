@@ -9,6 +9,11 @@ from database_ideas import *
 from map_generation import *
 from create_monster import *
 
+def _default(self, obj):
+    return getattr(obj.__class__, "to_json", _default.default)(obj)
+_default.default = JSONEncoder().default
+JSONEncoder.default = _default
+
 class TestDatabase(TestCase):
     def SetUp(self):
         director.init()
@@ -38,10 +43,10 @@ class TestDatabase(TestCase):
             db.execute(create_tile_table)
             tile = Tile(sentinel.image, 1, True)
             #import pdb; pdb.set_trace()
-            tile_inf = json.dumps(tile, default = encode_tile)
+            tile.to_json()
             db.execute(insert_tile, [4, 4, 1, tile_inf])
             for that_tile in db.execute(select_level_tiles, [1]):
-                a_tile = json.loads(that_tile[3])#that_tile is a tuple
+                Tile.from_json
                 self.assertEqual(a_tile, tile)
     #mobs
     @unittest.skip('fix this')
@@ -68,7 +73,6 @@ class TestDatabase(TestCase):
                 print(that_mob)
                 that_mob = json.loads(that_mob)
                 self.assertEqual(that_mob, mob)
-
 
 if __name__ == '__main__':
     unittest.main()

@@ -5,7 +5,8 @@ from cocos.text import RichLabel
 
 from util import util_starting_stats
 from cocos.director import director
-from main_scene import FirstScene
+from main_scene import PlayScene
+from create_character import Player
 
 class FirstLayer(layer.Layer, EventDispatcher):
     is_event_handler = True
@@ -34,8 +35,9 @@ class FirstLayer(layer.Layer, EventDispatcher):
         for button in self.race_selection_dict:
             if 1000<x<1250 and button_y-20<y<button_y+20:
                 chosen_race = self.race_selection_dict[button][0]
-                print(chosen_race)
-                first_scene = FirstScene(chosen_race = chosen_race, chosen_class = util_starting_stats.Warlock)
+                chosen_class = util_starting_stats.Warlock#for now
+                player1 = Player(chosen_race, chosen_class)
+                first_scene = PlayScene(player1)
                 director.push(first_scene)
             button_y -= 100
 

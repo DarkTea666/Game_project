@@ -29,6 +29,7 @@ class PlayingLayer(layer.Layer, EventDispatcher, Observer):
         self.player = player1
         self.add(self.player)
         self.player.current_map = self.map_layer.map
+        self.player_killed = False
 
         self.mobs = []
 
@@ -38,17 +39,23 @@ class PlayingLayer(layer.Layer, EventDispatcher, Observer):
         #FOR TESTS: infinite health
         #self.player.health = math.inf
 
+    def change_player_visibility(self):
+        i_p = self.player.tile()['i'] + len(self.map_layer.map)
+        j_p = self.player.tile()['j']
+        vis_map = calculate_visibility(i_p, j_p, self.map_layer)
+        self.dispatch_event('draw_player_vision', vis_map)
+        for mob in self.mobs:
+            mob.opacity = 0
+            m_i, m_j = mob.tile()['i']+len(self.map_layer.map), mob.tile()['j']
+            if vis_map[m_i][m_j] != '#':
+                mob.opacity = 255
+
     def spawn_items(self):
         self.interactive_layer.generate_items_open_area()
         #TO DO: MAKE IT SPAWN ITEMS DIFFERENTLY WITH EACH TYPE OF LEVEL
 
 
     def spawn_initial_mobs(self):
-        i_p = self.player.tile()['i'] + len(self.map_layer.map)
-        j_p = self.player.tile()['j']
-        vis_map = calculate_visibility(i_p, j_p, self.map_layer)
-        self.dispatch_event('draw_player_vision',vis_map)
-
         max_mobs = self.map_layer.level + 2
         amount_mobs = 0
         for i in range(0,len(self.map_layer.map)):
@@ -62,6 +69,9 @@ class PlayingLayer(layer.Layer, EventDispatcher, Observer):
                                   util_starting_stats.Gnoll_hunter,
                                   self.map_layer.level)
                     self.mobs.append(mob)
+                    if len(self.mobs) == 1:#make him have a level key
+                        pass
+                        #mob.loot.append()
                     mob.position = (j+1)*50, (len(self.map_layer.map)-i)*50
                     self.add(mob)
 
@@ -93,34 +103,35 @@ class PlayingLayer(layer.Layer, EventDispatcher, Observer):
         return result
 
     def do_after_turn(self):
-        self.handling_moves = False
-
-        i_p = self.player.tile()['i'] + len(self.map_layer.map)
-        j_p = self.player.tile()['j']
-        vis_map = calculate_visibility(i_p, j_p, self.map_layer)
-        self.dispatch_event('draw_player_vision', vis_map)
-
-        print('turn:',self.player.turn)
-        print('health:',self.player.health)
-        for mob in self.mobs:
-            if mob.check_for_death(self.player):
-                self.remove(mob)
-                self.mobs.remove(mob)
-                print('You killed the',mob.name,'!')
-
-        if self.mobs == []:
-            self.handling_moves = True
-        if self.mobs != []:
-            self.mobs[0].move_if_close_range()
-
-        if self.player.check_for_death() == True:
-            self.remove(self.player)
+        if self.player_killed != True:
             self.handling_moves = False
-            print('You died!')#for now
-        if self.mobs == []:
-            print('You win!')#for now
-        self.this_turn += 1
+            self.change_player_visibility()
+            self.player.check_hunger()#
+            self.player.add_regen()#
+            self.player.add_hunger()#
 
+            print('turn:',self.player.turn)
+            print('health:',self.player.health)
+            for mob in self.mobs:
+                if mob.check_for_death(self.player):
+                    self.remove(mob)
+                    self.mobs.remove(mob)
+                    print('You killed the',mob.name,'!')
+
+            if self.mobs == []:
+                self.handling_moves = True
+            if self.mobs != []:
+                self.mobs[0].move_if_close_range()
+
+            if self.player.check_for_death() == True and self.player_killed != True:
+                self.remove(self.player)
+                self.handling_moves = False
+                self.player_killed = True
+                print('You died!')#for now
+            if self.mobs == []:
+                print('You win!')#for now
+            self.this_turn += 1
+    
     def player_do_turn(self, x, y):
         self.player.current_map = self.map_layer.map
         self.player.direction = x,y
@@ -135,7 +146,7 @@ class PlayingLayer(layer.Layer, EventDispatcher, Observer):
             x1, y1 = mob.position
             self.effect_layer.normal_strike(x1, y1, True)
             self.player.check_moves()
-            if self.this_turn == self.player.turn - 1:
+            if self.this_turn == self.player.turn - 1 and self.player != False:
                 self.do_after_turn()
             #TO DO: MAKE IT SO THST THIS IS DONE WITHIN THE PLAYER
 

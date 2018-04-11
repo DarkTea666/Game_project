@@ -2,13 +2,15 @@ from cocos.layer import Layer
 from cocos.sprite import Sprite
 from cocos.actions import MoveBy, CallFunc
 from pyglet.event import EventDispatcher
+from cocos.director import director
 
 from functools import partial
 import random
 
 from observer_class import Observer
 from util import util_starting_stats
-
+from main_scene import PlayScene
+from database_ideas import move_level_to_database
 
 class Player(Layer, EventDispatcher, Observer):
 
@@ -60,21 +62,44 @@ class Player(Layer, EventDispatcher, Observer):
         self.current_map = False
         
         self.class_sprite = Sprite(Class.class_sprite)
-        self.class_sprite.position = 600, 400
         self.class_sprite.scale = 0.05
         self.add(self.class_sprite)
 
         self.race_sprite = Sprite(Race.race_sprite)
-        self.race_sprite.position = 600, 400
         self.race_sprite.scale = 0.05
         self.add(self.race_sprite)
 
 
     #DISPATCER EVENTS                      #events only transport values None and True
     def move_if_possible(self):
+        play_layer = self.inventory.play_layer 
+        map_layer = play_layer.map_layer
         play_layer_do_after_turn = partial(self.dispatch_event,'do_after_turn')
         x,y = self.direction
-        passability = self.dispatch_event('check_passability', x, y)
+        i_p,j_p = self.tile()['i']+len(map_layer.map), self.tile()['j']
+        tile_stepping_on = map_layer.tile_map[i_p-y][j_p+x]
+        if tile_stepping_on.exit == 'unlocked' or tile_stepping_on.entrance == 'unlocked':
+            if tile_stepping_on.exit == 'unlocked':
+                d = 1
+                print('exit')
+            else:
+                d = -1
+                print('entrance')
+            print(d)
+            move_level_to_database(map_layer, play_layer.mobs)#
+            
+            play_layer.mobs = []
+            play_layer.remove(self)
+            play_layer.player_killed = True
+            del play_layer
+            this_scene = self.parent.parent
+            this_scene = self.parent.parent
+            next_scene = PlayScene(self, level = this_scene.level+d,
+                    levels_visited = this_scene.levels_visited, prev_level = this_scene.level)
+            del self
+            director.run(next_scene)
+        #
+        passability = play_layer.check_passability(x, y)#this was a dispatch_event ealier
         if passability:
             print('Moves:',self.moves)
             if self.moves != self.speed - 1:
@@ -87,7 +112,7 @@ class Player(Layer, EventDispatcher, Observer):
                 self.moves += 1
             self.check_moves()
         #TO DO: dispatch a play_layer event that checks for a mob and hits it
-
+        #maybe?
 
     def tile(self):
         p,q = self.race_sprite.position
@@ -113,11 +138,28 @@ class Player(Layer, EventDispatcher, Observer):
         self.moves = self.speed
 
     #PASSIVE
-    def check_moves(self):
+    def check_moves(self):# do I just NOT do that anywhere?
         if self.moves == self.speed:
             self.moves = 0
             self.turn += 1
 
+    def add_hunger(self):
+        hungers = [self.hunger, self.gold_hunger, self.blood_thirst]
+        max_hungers = [self.max_hunger,
+                       self.max_gold_hunger,
+                       self.max_blood_thirst]
+        if self.hunger != 'none':
+            self.hunger -= 100/self.max_hunger
+            if self.hunger <= 0:
+                self.hunger = 0
+        if self.gold_hunger != 'none':
+            self.gold_hunger -= 100/self.max_gold_hunger
+            if self.gold_hunger <= 0:
+                self.gold_hunger = 0
+        if self.blood_thirst != 'none':
+            self.blood_thirst -= 100/self.max_blood_thirst
+            if self.blood_thirst <= 0:
+                self.blood_thirst = 0
 
     def add_regen(self):
         self.health += self.regen
@@ -132,8 +174,8 @@ class Player(Layer, EventDispatcher, Observer):
         self.health -= hungers.count(0)
 
         key = True
-        for i in range(3):
-            if hungers[i] < max_hungers[i]:
+        for i in range(0,3):
+            if hungers[i] != 'none' and hungers[i] < max_hungers[i]-20:
                 key = False
         if key:
             self.add_regen()
@@ -161,5 +203,4 @@ class Player(Layer, EventDispatcher, Observer):
 
 
 Player.register_event_type('do_after_turn')
-Player.register_event_type('check_passability')
 

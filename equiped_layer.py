@@ -49,7 +49,7 @@ class EquipedLayer(Layer):
 
     def update_player_information(self):
         player = self.inv_layer.play_layer.player
-        self.all_info = {'health':[player.health,'/',player.max_health],
+        self.all_info = {'health':[int(player.health),'/',player.max_health],
                      'strength':[player.strength],
                      'damage':[int(player.damage)],
                      'defence':[player.defence],
@@ -58,7 +58,10 @@ class EquipedLayer(Layer):
                      'energy':[player.energy, '/', player.max_energy],
                      'intellect':[player.intellect],
                      'preferred weapon type':[player.pref_weapon_type],
-                     'preferred armour type':[player.pref_armour_type]}
+                     'preferred armour type':[player.pref_armour_type],
+                     'hunger':[player.hunger, '/', player.max_hunger],
+                     'gold_hunger':[player.gold_hunger, '/', player.max_gold_hunger],
+                     'bloodthirst':[player.blood_thirst, '/', player.max_blood_thirst]}
 
     def visualise_player_information(self, de_vis = False):
         self.update_player_information()

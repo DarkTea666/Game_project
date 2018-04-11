@@ -34,7 +34,7 @@ class Monster(Sprite): #non-boss
         self.spectral = monster_type.spectral
         self.undead = monster_type.undead
         self.ranged = monster_type.ranged
-        self.loot = False
+        self.loot = []
 
         self.scale = 0.05
 
@@ -122,7 +122,8 @@ class Monster(Sprite): #non-boss
             player_is_visible = True
 
         if player_is_visible:
-            while self.speed != self.moves :
+            count = 0
+            while self.speed != self.moves:
                 if self.close_combat_check(player,map_layer):
                     self.close_range_attack(player)
                     print('You got hit by',self.name,'!')
@@ -133,18 +134,23 @@ class Monster(Sprite): #non-boss
                 else:
                     p,q = 0,0
                     blocked_tiles = []
-                    while (p,q) == (0,0):
+                    while (p,q) == (0,0) and count <= 8:
                         path = pathfind_to_target(map_layer, self.tile()['i']+len(map_layer.map), self.tile()['j'],
                                            player.tile()['i']+len(map_layer.map), player.tile()['j'], blocked_tiles)
                         y, x = path[0]
                         if self.parent.check_tile_for_mob(x,y)[0]:
                             blocked_tiles.append((y, x))
-                            print('block')
                         else:
                             i1, j1 = self.tile()['i'] + len(map_layer.map), self.tile()['j']
                             p, q = (x - j1) * 50, -(y - i1) * 50
                             self.moves += 1
                             moving_actions.append(MoveBy((p, q), 0.1))
+                        count += 1
+                    if count == 9:# an exeption for when a mob is stuck #FIXED
+                        self.moves += 1
+                        moving_actions.append(MoveBy((p, q), 0.1))
+
+                
         if not player_is_visible:#move randomly
             not_moved_key = True
             while not_moved_key:
