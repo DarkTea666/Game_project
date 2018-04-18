@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/create_character.py" line="84" />
+    <bookmark url="file://$PROJECT_DIR$/create_character.py" line="88" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba14ea9e-842f-47a3-b3a8-ed97bcdff6bd" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/algorithms/algorithms_connected_level.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/StartGame.bat" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/StartGameConference.bat" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/recuirement.txt" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/create_character.py" afterPath="$PROJECT_DIR$/create_character.py" />
+      <change beforePath="$PROJECT_DIR$/create_monster.py" afterPath="$PROJECT_DIR$/create_monster.py" />
+      <change beforePath="$PROJECT_DIR$/equiped_layer.py" afterPath="$PROJECT_DIR$/equiped_layer.py" />
+      <change beforePath="$PROJECT_DIR$/interact_layer.py" afterPath="$PROJECT_DIR$/interact_layer.py" />
+      <change beforePath="$PROJECT_DIR$/inventories.py" afterPath="$PROJECT_DIR$/inventories.py" />
+      <change beforePath="$PROJECT_DIR$/item_menu_layer.py" afterPath="$PROJECT_DIR$/item_menu_layer.py" />
+      <change beforePath="$PROJECT_DIR$/items/items_base.py" afterPath="$PROJECT_DIR$/items/items_base.py" />
+      <change beforePath="$PROJECT_DIR$/items/items_misc.py" afterPath="$PROJECT_DIR$/items/items_misc.py" />
+      <change beforePath="$PROJECT_DIR$/items/items_sceptres.py" afterPath="$PROJECT_DIR$/items/items_sceptres.py" />
+      <change beforePath="$PROJECT_DIR$/items/items_weapons.py" afterPath="$PROJECT_DIR$/items/items_weapons.py" />
+      <change beforePath="$PROJECT_DIR$/main_scene.py" afterPath="$PROJECT_DIR$/main_scene.py" />
+      <change beforePath="$PROJECT_DIR$/map_generation.py" afterPath="$PROJECT_DIR$/map_generation.py" />
+      <change beforePath="$PROJECT_DIR$/map_save.db" afterPath="$PROJECT_DIR$/map_save.db" />
+      <change beforePath="$PROJECT_DIR$/play_layer.py" afterPath="$PROJECT_DIR$/play_layer.py" />
+      <change beforePath="$PROJECT_DIR$/util/util_selecting_layer.py" afterPath="$PROJECT_DIR$/util/util_selecting_layer.py" />
+      <change beforePath="$PROJECT_DIR$/util/util_starting_stats.py" afterPath="$PROJECT_DIR$/util/util_starting_stats.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,7 +41,7 @@
     <SUITE FILE_PATH="coverage/Game_project$play_layer.coverage" NAME="play_layer Coverage Results" MODIFIED="1518794120184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Game_project$Unittests_for_tests_visibility_VisibilityTests_test_distance2.coverage" NAME="Unittests for tests_visibility.VisibilityTests.test_distance2 Coverage Results" MODIFIED="1518794227791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Game_project$create_monster.coverage" NAME="create_monster Coverage Results" MODIFIED="1518794853814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Game_project$Main_program.coverage" NAME="Main_program Coverage Results" MODIFIED="1522325988137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Game_project$Main_program.coverage" NAME="Main_program Coverage Results" MODIFIED="1524057470714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Game_project$working_prototype.coverage" NAME="working_prototype Coverage Results" MODIFIED="1517664430028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Game_project$tests.coverage" NAME="tests Coverage Results" MODIFIED="1517926529812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Game_project$tests_visibility.coverage" NAME="tests_visibility Coverage Results" MODIFIED="1518525263426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
@@ -54,72 +72,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="items_misc.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/items/items_misc.py">
+      <file leaf-file-name="Main_program.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Main_program.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_monster.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="create_monster.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/create_monster.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="101" column="26" lean-forward="true" selection-start-line="101" selection-start-column="26" selection-end-line="101" selection-end-column="26" />
+            <state relative-caret-position="420">
+              <caret line="77" column="31" lean-forward="false" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map_generation.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/map_generation.py">
+      <file leaf-file-name="interact_layer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interact_layer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3753">
-              <caret line="147" column="12" lean-forward="false" selection-start-line="147" selection-start-column="12" selection-end-line="147" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="algorithms_visibility.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/algorithms/algorithms_visibility.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1350">
-              <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <state relative-caret-position="783">
+              <caret line="35" column="58" lean-forward="false" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database_ideas.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database_ideas.py">
+      <file leaf-file-name="items_base.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/items/items_base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1269">
-              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-              <folding>
-                <marker date="1522956527460" expanded="true" signature="347:450" ph="CREATE TABLE... IF" />
-                <marker date="1522956527460" expanded="true" signature="479:581" ph="CREATE TABLE... IF" />
-                <marker date="1522956527460" expanded="true" signature="605:638" ph="INSERT INTO tiles... " />
-                <marker date="1522956527460" expanded="true" signature="661:693" ph="INSERT INTO mobs... " />
-                <marker date="1522956527460" expanded="true" signature="724:759" ph="SELECT * FRO... tiles" />
-                <marker date="1522956527460" expanded="true" signature="788:822" ph="SELECT * FRO... mobs" />
-                <marker date="1522956527460" expanded="true" signature="842:867" ph="DROP TABLE m... " />
-                <marker date="1522956527460" expanded="true" signature="886:912" ph="DROP TABLE I... " />
-              </folding>
+            <state relative-caret-position="685">
+              <caret line="42" column="29" lean-forward="false" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="visibility_layer.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/visibility_layer.py">
+      <file leaf-file-name="equiped_layer.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/equiped_layer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="490">
+              <caret line="51" column="38" lean-forward="false" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main_scene.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main_scene.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="30" column="40" lean-forward="false" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -128,45 +135,39 @@
       <file leaf-file-name="play_layer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/play_layer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1566">
-              <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="interact_layer.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/interact_layer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1242">
-              <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <state relative-caret-position="515">
+              <caret line="130" column="58" lean-forward="false" selection-start-line="130" selection-start-column="58" selection-end-line="130" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_character.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/create_character.py">
+      <file leaf-file-name="inventories.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inventories.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2295">
-              <caret line="96" column="41" lean-forward="false" selection-start-line="96" selection-start-column="41" selection-end-line="96" selection-end-column="41" />
-              <folding>
-                <element signature="e#0#29#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="271">
+              <caret line="67" column="65" lean-forward="false" selection-start-line="67" selection-start-column="65" selection-end-line="67" selection-end-column="65" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main_scene.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main_scene.py">
+      <file leaf-file-name="StartGame.bat" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/StartGame.bat">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="30" column="40" lean-forward="false" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#29#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="27">
+              <caret line="1" column="20" lean-forward="false" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StartGameConference.bat" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/StartGameConference.bat">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="41" lean-forward="false" selection-start-line="0" selection-start-column="41" selection-end-line="0" selection-end-column="41" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -272,10 +273,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Path_finding" />
-        <option value="$PROJECT_DIR$/path_finding.py" />
-        <option value="C:/Python/Lib/site-packages/pyglet/test_events.py" />
-        <option value="$PROJECT_DIR$/observer_class.py" />
         <option value="C:/Python/Lib/site-packages/pyglet/event.py" />
         <option value="$PROJECT_DIR$/loot_tables.py" />
         <option value="$PROJECT_DIR$/pathfinding.py" />
@@ -299,7 +296,6 @@
         <option value="$PROJECT_DIR$/tests/tests_visibility.py" />
         <option value="$PROJECT_DIR$/algorithms/algorithms_pathfinding.py" />
         <option value="$PROJECT_DIR$/../Unittest_MagicMock_test.py" />
-        <option value="$PROJECT_DIR$/equiped_layer.py" />
         <option value="$PROJECT_DIR$/item_menu_layer.py" />
         <option value="C:/Python/Lib/idlelib/__main__.py" />
         <option value="$PROJECT_DIR$/tests_level_database.py" />
@@ -309,12 +305,9 @@
         <option value="$PROJECT_DIR$/util/util_starting_stats.py" />
         <option value="$PROJECT_DIR$/inventories.py" />
         <option value="$PROJECT_DIR$/tests/tests_level_database.py" />
-        <option value="$PROJECT_DIR$/play_layer.py" />
         <option value="$PROJECT_DIR$/items/items_sceptres.py" />
         <option value="$PROJECT_DIR$/items/items_weapons.py" />
-        <option value="$PROJECT_DIR$/items/items_base.py" />
         <option value="$PROJECT_DIR$/items/items_keys.py" />
-        <option value="$PROJECT_DIR$/interact_layer.py" />
         <option value="$PROJECT_DIR$/menu_scene.py" />
         <option value="$PROJECT_DIR$/create_character.py" />
         <option value="$PROJECT_DIR$/main_scene.py" />
@@ -322,7 +315,15 @@
         <option value="$PROJECT_DIR$/algorithms/algorithms_visibility.py" />
         <option value="$PROJECT_DIR$/map_generation.py" />
         <option value="$PROJECT_DIR$/items/items_misc.py" />
+        <option value="$PROJECT_DIR$/recuirement.txt" />
+        <option value="$PROJECT_DIR$/StartGame.bat" />
+        <option value="$PROJECT_DIR$/StartGameConference.bat" />
+        <option value="$PROJECT_DIR$/interact_layer.py" />
+        <option value="$PROJECT_DIR$/items/items_base.py" />
+        <option value="$PROJECT_DIR$/play_layer.py" />
+        <option value="$PROJECT_DIR$/util/util_selecting_layer.py" />
         <option value="$PROJECT_DIR$/create_monster.py" />
+        <option value="$PROJECT_DIR$/equiped_layer.py" />
       </list>
     </option>
   </component>
@@ -373,7 +374,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -405,6 +405,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -689,7 +690,14 @@
       <option name="project" value="LOCAL" />
       <updated>1523421701086</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="removed all bugs (that I know of), moving between levels is established">
+      <created>1523422430483</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1523422430483</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -718,12 +726,12 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905483" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0037593986" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="0" y="0" width="434" height="848" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0021482278" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="0" y="0" width="434" height="848" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.33989072" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="196" y="374" width="1490" height="301" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35392052" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.327252" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12943073" sideWeight="0.490284" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15037593" sideWeight="0.490284" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -766,6 +774,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.bat" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -828,20 +839,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Sprites/Warlock.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player_functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/visibility.py" />
-    <entry file="file://$PROJECT_DIR$/items.py" />
     <entry file="file://$PROJECT_DIR$/__init__.py" />
     <entry file="file://$PROJECT_DIR$/items/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -861,13 +858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/effect_layer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="27" column="12" lean-forward="false" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -935,13 +925,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/tests_assure_package_works.py" />
-    <entry file="file://$PROJECT_DIR$/util/util_selecting_layer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="30" column="8" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python/Lib/site-packages/pyglet/window/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
@@ -993,13 +976,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/equiped_layer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2511">
-          <caret line="100" column="25" lean-forward="false" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/tests_algorythms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1035,20 +1011,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/items/items_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1053">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inventories.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="34" column="30" lean-forward="false" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/items/items_weapons.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
@@ -1063,13 +1025,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main_program.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/menu_scene.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="702">
@@ -1081,16 +1036,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1269">
           <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding>
-            <marker date="1522956527460" expanded="true" signature="347:450" ph="CREATE TABLE... IF" />
-            <marker date="1522956527460" expanded="true" signature="479:581" ph="CREATE TABLE... IF" />
-            <marker date="1522956527460" expanded="true" signature="605:638" ph="INSERT INTO tiles... " />
-            <marker date="1522956527460" expanded="true" signature="661:693" ph="INSERT INTO mobs... " />
-            <marker date="1522956527460" expanded="true" signature="724:759" ph="SELECT * FRO... tiles" />
-            <marker date="1522956527460" expanded="true" signature="788:822" ph="SELECT * FRO... mobs" />
-            <marker date="1522956527460" expanded="true" signature="842:867" ph="DROP TABLE m... " />
-            <marker date="1522956527460" expanded="true" signature="886:912" ph="DROP TABLE I... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1098,45 +1043,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="864">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/create_character.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2295">
+        <state relative-caret-position="2268">
           <caret line="96" column="41" lean-forward="false" selection-start-line="96" selection-start-column="41" selection-end-line="96" selection-end-column="41" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#0#29#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_scene.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="30" column="40" lean-forward="false" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/play_layer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1566">
-          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/interact_layer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1242">
-          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1150,26 +1066,129 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/map_generation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3753">
+        <state relative-caret-position="3726">
           <caret line="147" column="12" lean-forward="false" selection-start-line="147" selection-start-column="12" selection-end-line="147" selection-end-column="12" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/items/items_misc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        <state relative-caret-position="621">
+          <caret line="23" column="9" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+          <folding>
+            <marker date="1523687931866" expanded="true" signature="1729:2046" ph="..." />
+            <marker date="1523687931866" expanded="true" signature="1960:2046" ph="..." />
+            <marker date="1523687931866" expanded="true" signature="3054:3056" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/effect_layer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recuirement.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main_program.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StartFromSchool" />
+    <entry file="file://$PROJECT_DIR$/StartGame.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" column="20" lean-forward="false" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StartGameConference.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="41" lean-forward="false" selection-start-line="0" selection-start-column="41" selection-end-line="0" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interact_layer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="783">
+          <caret line="35" column="58" lean-forward="false" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/items/items_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="685">
+          <caret line="42" column="29" lean-forward="false" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_scene.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="30" column="40" lean-forward="false" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/util_selecting_layer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#29#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/play_layer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="130" column="58" lean-forward="false" selection-start-line="130" selection-start-column="58" selection-end-line="130" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inventories.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="67" column="65" lean-forward="false" selection-start-line="67" selection-start-column="65" selection-end-line="67" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/create_monster.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="101" column="26" lean-forward="true" selection-start-line="101" selection-start-column="26" selection-end-line="101" selection-end-column="26" />
+        <state relative-caret-position="420">
+          <caret line="77" column="31" lean-forward="false" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/equiped_layer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="51" column="38" lean-forward="false" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
           <folding />
         </state>
       </provider>

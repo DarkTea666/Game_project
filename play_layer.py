@@ -103,6 +103,7 @@ class PlayingLayer(layer.Layer, EventDispatcher, Observer):
         return result
 
     def do_after_turn(self):
+        self.player.equip_layer.update_bars()
         if self.player_killed != True:
             self.handling_moves = False
             self.change_player_visibility()
@@ -127,7 +128,7 @@ class PlayingLayer(layer.Layer, EventDispatcher, Observer):
                 self.remove(self.player)
                 self.handling_moves = False
                 self.player_killed = True
-                print('You died!')#for now
+                self.player.equip_layer.show_death_label()
             if self.mobs == []:
                 print('You win!')#for now
             self.this_turn += 1

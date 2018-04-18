@@ -69,35 +69,43 @@ class Player(Layer, EventDispatcher, Observer):
         self.race_sprite.scale = 0.05
         self.add(self.race_sprite)
 
-
     #DISPATCER EVENTS                      #events only transport values None and True
     def move_if_possible(self):
         play_layer = self.inventory.play_layer 
         map_layer = play_layer.map_layer
         play_layer_do_after_turn = partial(self.dispatch_event,'do_after_turn')
         x,y = self.direction
+        
+        self.update_damage()
+        self.update_sprite_direction()
+        
         i_p,j_p = self.tile()['i']+len(map_layer.map), self.tile()['j']
         tile_stepping_on = map_layer.tile_map[i_p-y][j_p+x]
+        start_next_level = True
         if tile_stepping_on.exit == 'unlocked' or tile_stepping_on.entrance == 'unlocked':
             if tile_stepping_on.exit == 'unlocked':
                 d = 1
                 print('exit')
-            else:
+            if tile_stepping_on.entrance == 'unlocked' and map_layer.level != 1:
                 d = -1
                 print('entrance')
-            print(d)
-            move_level_to_database(map_layer, play_layer.mobs)#
+            if tile_stepping_on.entrance == 'unlocked' and map_layer.level == 1:
+                start_next_level = False
+                print('One does not leave the first level like that!')
             
-            play_layer.mobs = []
-            play_layer.remove(self)
-            play_layer.player_killed = True
-            del play_layer
-            this_scene = self.parent.parent
-            this_scene = self.parent.parent
-            next_scene = PlayScene(self, level = this_scene.level+d,
+            if start_next_level:
+                move_level_to_database(map_layer, play_layer.mobs)#
+            
+                play_layer.mobs = []
+                play_layer.remove(self)
+                play_layer.player_killed = True
+                del play_layer
+                this_scene = self.parent.parent
+                this_scene = self.parent.parent
+                next_scene = PlayScene(self, level = this_scene.level+d,
                     levels_visited = this_scene.levels_visited, prev_level = this_scene.level)
-            del self
-            director.run(next_scene)
+                del self
+                director.run(next_scene)
         #
         passability = play_layer.check_passability(x, y)#this was a dispatch_event ealier
         if passability:
@@ -122,7 +130,7 @@ class Player(Layer, EventDispatcher, Observer):
 
     def check_for_death(self):
         result = False
-        if self.health < 1:
+        if self.health <= 0:
             result = True
         return result
 
@@ -137,6 +145,21 @@ class Player(Layer, EventDispatcher, Observer):
         opponent.health -= long_distance_weapon.damage
         self.moves = self.speed
 
+    def update_damage(self):
+        self.damage = int(self.strength/3) 
+        if self.equip_layer.equipment_dict['weapon'][0] != False:
+            self.damage +=  self.equip_layer.equipment_dict['weapon'][0][0].damage
+        #also add the ring buffs after I add rings
+
+    def update_sprite_direction(self):
+        if self.direction[0] == 1:
+            self.race_sprite.scale_x = 1
+            self.class_sprite.scale_x = 1 
+        if self.direction[0] == -1:
+            self.race_sprite.scale_x = -1
+            self.class_sprite.scale_x = -1
+
+            
     #PASSIVE
     def check_moves(self):# do I just NOT do that anywhere?
         if self.moves == self.speed:

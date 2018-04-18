@@ -22,7 +22,7 @@ class SelectLayer(Layer):
 
         self.tile_selecter = Sprite('Sprites/Selecter.png')
         self.tile_selecter.scale = 0.049
-        self.tile_selecter.position = 400,400#temporary, delete later
+        self.tile_selecter.position = self.player.tile()['j'], self.player.tile()['i'] + len(self.map_layer.map)
         #if self.vis_map[i1][j1] == '#':
         #    self.tile_selecter.opacity == 0
         self.add(self.tile_selecter)
@@ -37,16 +37,9 @@ class SelectLayer(Layer):
             self.function(self, self.inv_layer.play_layer.effect_layer, target_i = i0, target_j = j0)
             self.parent.remove(self)
             self.inv_layer.play_layer.handling_moves = True
-            """except:
-                print('THE FUNCTION THAT IS GIVEN')
-                print('TO THE SELECTING_LAYER')
-                print('DOES NOT TAKES THOSE ARGS.')
-                print("IT SHOULD GET ONLY THE TILE'S I,J")"""
-
-    def on_mouse_drag(self,x,y,dx,dy,buttons,modifiers):
-        pass
 
     def on_mouse_motion(self, x, y, dx, dy):
+        print(x,y)
         if 1225>=x>=25 and 775>=y>=25 and self.handling_mouse:
             x1, y1 = x-((x+25)%50)+25, y-((y+25)%50)+25
             j1, i1 = int(x1/50)-1, -int(y1/50) + len(self.map_layer.map)

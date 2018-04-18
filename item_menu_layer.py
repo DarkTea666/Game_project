@@ -56,6 +56,7 @@ class ItemMenuLayer(Layer):
                 for button_name, button_func in self.item.buttons.items():
                     if button_name == name:
                         button_func()
+                        self.parent.play_layer.player.equip_layer.update_bars()
                         self.parent.remove(self)
                         non_press = False
 

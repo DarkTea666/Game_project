@@ -64,6 +64,8 @@ class InventoryLayer(Layer, Observer):
         return it_key
 
     def on_mouse_press(self,x,y,buttons,modifiers):
+        #x,y = get_virtual_coordinates(x,y)
+        print('kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk',x,y)
         if self.handling_clicks:
             not_press_key = True
             for inv_name, inv_list in self.dict_inv.items():

@@ -17,7 +17,7 @@ class Sceptre(Item):
                       sceptre_stats.menu,
                       {'Drop': self.Drop, 'Equip': self.Equip, 'Unequip': self.Unequip, 'Recharge': self.Recharge,
                        'Cast': self.Cast})
-        self.inv_type = 'all'
+        self.inv_type = 'weapons'
         self.equip_type = 'long_range'
         self.level = level
 
@@ -60,7 +60,7 @@ class Sceptre(Item):
         select_layer = SelectLayer(inv_layer)
         select_layer.function = self.Visualise_cast_Normal
         # maybe give select_layer the image to make Visualise_cast_Normal more general?
-        inv_layer.parent.add(select_layer, z=4)
+        play_layer.parent.add(select_layer, z=4)
 
     def Visualise_cast_Normal(self, select_layer, effect_layer, target_i=False, target_j=False):
         play_layer = self.inv_layer.play_layer
@@ -106,3 +106,4 @@ class Sceptre(Item):
         after_effect.position = missile_sprite.position  # MAKE AN ACTION THAT MAKES A SPRITE FADEIN AND FADEOUT
         # put part of this or all of this fully into effect_layer?
         missile_sprite.do(move_action + damage_action + disappear_action)
+

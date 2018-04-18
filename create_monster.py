@@ -25,10 +25,10 @@ class Monster(Sprite): #non-boss
         self.dungeon_level = dungeon_level
  
         #TO DO: make those a bit random and depend on the dungeon_level
-        self.max_health = monster_type.max_health
-        self.health = monster_type.max_health
+        self.max_health = monster_type.max_health + randrange(-5,10,5)
+        self.health = monster_type.max_health 
         self.defence = monster_type.defence
-        self.damage = monster_type.damage
+        self.damage = monster_type.damage + randrange(-1,2)
 
         self.flying = monster_type.flying
         self.spectral = monster_type.spectral
@@ -37,6 +37,8 @@ class Monster(Sprite): #non-boss
         self.loot = []
 
         self.scale = 0.05
+        self.direction = (0,0)        
+        self.player_vis_map = False
 
     def to_json(obj):
         return {'type': 'Monster', 'image_path': obj.image_path, 'level': obj.dungeon_level, 'moves': obj.moves,
@@ -53,6 +55,13 @@ class Monster(Sprite): #non-boss
             return mob
         raise TypeError("Monster's from_json classmethod doesn't work")
 
+    def update_sprite_direction(self):
+        if self.direction[0] == 1:
+            self.scale_x = -1
+        if self.direction[0] == -1:
+            self.scale_x = 1
+
+
 
     def tile(self):
         p,q = self.position
@@ -65,16 +74,20 @@ class Monster(Sprite): #non-boss
 
     def close_range_attack(self,opponent):
         opponent.health -= self.damage
+        if opponent.health < 0:
+            opponent.health = 0
         self.moves = self.speed
  
 
     def close_combat_check(self,player,map_layer):
+        self.parent.player.equip_layer.update_bars()
         directions = [(1,0),(1,1),(0,1),(-1,1),(-1,0),(-1,-1),(0,-1),(1,-1)]
         key = False
         for x,y in directions:
             if self.tile()['j'] == player.tile()['j']+x and\
                self.tile()['i'] == player.tile()['i']-y:
                 key = True
+                self.direction = (x,y)
         return key
                 
 
@@ -106,6 +119,7 @@ class Monster(Sprite): #non-boss
         self.parent.handling_moves = True
 
     def move_if_close_range(self):
+
         map_layer = self.parent.map_layer
         player = self.parent.player
         mobs = self.parent.mobs
@@ -144,6 +158,8 @@ class Monster(Sprite): #non-boss
                             i1, j1 = self.tile()['i'] + len(map_layer.map), self.tile()['j']
                             p, q = (x - j1) * 50, -(y - i1) * 50
                             self.moves += 1
+                            self.direction = (int(p/50),int(q/50))
+                            self.update_sprite_direction()
                             moving_actions.append(MoveBy((p, q), 0.1))
                         count += 1
                     if count == 9:# an exeption for when a mob is stuck #FIXED
@@ -170,4 +186,5 @@ class Monster(Sprite): #non-boss
             self.do(result_action + \
                     CallFunc(mobs[mobs.index(self) + 1].move_if_close_range))
 
-
+    def establish_opacity(self):#make mobs to be not seen better (need for play_layer to have acces to vis_layer for thos to work)
+       pass 

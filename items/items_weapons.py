@@ -20,6 +20,7 @@ class Weapon(Item):
         self.level = level
 
         self.base_damage = weapon_stats.base_damage
+        self.damage = self.base_damage
         self.weapon_type = weapon_stats.weapon_type
         self.req_strength = weapon_stats.req_strength
         self.miss_chance = weapon_stats.miss_chance
@@ -35,11 +36,11 @@ class Weapon(Item):
 
     def Remove_stats(self):
         player = self.inv_layer.play_layer.player
-        player.damage -= (self.base_damage + (self.level-1)*5)
+        player.damage -= (self.damage + (self.level-1)*5)
 
     def Add_stats(self):
         player = self.inv_layer.play_layer.player
-        player.damage += (self.base_damage + (self.level-1)*5)
+        player.damage += (self.damage + (self.level-1)*5)
 
 
 

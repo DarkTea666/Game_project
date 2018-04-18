@@ -156,24 +156,6 @@ Bluefire_sceptre = Sceptre('Bluefire sceptre', 5, 3, 5,
                             [])
 
 
-Rung = namedtuple('Ring',['name', 'image', 'text', 'base_stats', 'special'])
-
-
-
-
-
-
-
-                  
-
-
-
-
-
-
-              
-                    
-
-
+Ring = namedtuple('Ring',['name', 'image', 'text', 'base_stats', 'special'])
 
 

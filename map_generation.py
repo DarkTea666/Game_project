@@ -4,6 +4,7 @@ from cocos.batch import BatchNode
 
 from random import randrange
 import json
+import math
 
 from util import util_starting_stats as starting_stats
 from observer_class import Observer
@@ -122,7 +123,9 @@ class LevelMap(Layer):
         connect = True
         while wall_count != connect:
             wall_count = 0
-            if self.level in range(1,5):
+            if self.level == 0:
+                generate_this = self.generate_0
+            if self.level in range(1,999):
                 generate_this = self.generate_1_5
             self.map = []
             self.tile_map = []
@@ -136,16 +139,6 @@ class LevelMap(Layer):
         if draw_map:
             self.draw_map(T0, T1, overlays1=True, overlays0=True)
         
-        #-----------connectivity testing--------------#
-        connected_part = connected_level(self)
-        self.mark()
-        showmap = [['*' if (i,j) not in connected_part and self[i][j] == 0
-        else self[i][j] for j in range(0,len(self.map[0]))]
-                    for i in range(0,len(self.map))]
-        print('--------------------------------------------')
-        for i in range(len(self.map)):
-            print(*showmap[i])
-            
     def draw_map(self, T0, T1, overlays1 = False, overlays0 = False):
         extends = [[{'l':0, 'r':0, 'u':0, 'd':0}
                     for j in range(0,len(self.map[0]))]
@@ -188,7 +181,7 @@ class LevelMap(Layer):
                         ext.scale = 0.049
                         self.batch2.add(ext)
                     
-    def make_level_exits(self, exit_image, entrance_image):#could search for the exit and entrance separatly...
+    def make_level_exits(self, exit_image, entrance_image, make_exit = True, make_entrance = True):
         exit_key, entrance_key = True, True
         while exit_key or entrance_key:
             for i in range(0, len(self.map)):
@@ -261,4 +254,24 @@ class LevelMap(Layer):
                     self.tile_map[i][j] = boulder
         return (T0,T1) 
 
-    
+    def generate_0(self):
+        self.map = [[0 for j in range(0,22)] for i in range(0,13)]
+        self.tile_map = [[0 for j in range(0,22)] for i in range(0,13)]
+        for i in range(0,len(self.map)):#wall borders
+            self[i].insert(0,1)
+            self[i].append(1)
+        self.map.append([1 for x in range(0,len(self.map[0]))])
+        self.map.insert(0,[1 for x in range(0,len(self.map[0]))])
+        
+        tavern_wall_tiles = [(2,j) for j in range(3,11)] + [(9,j) for j in range(3,11)]\
+                            + [(i,3) for i in range(3,10)] + [(3,0), (4,10), (7,10), (8,10), (5,10)]
+        
+        tavern_floor_tiles = []
+        for i in range(3,9):
+            for j in range(4,10):
+                tavern_floor_tiles.append((i,j))
+
+
+                 
+
+

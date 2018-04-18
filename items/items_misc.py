@@ -15,11 +15,13 @@ class Key(Item):#chest should check if key is in inventory
         self.inv_type = 'all'
         self.level = level
         self.object = chest_object
+        #not used right now...
+
 
 class Food(Item):
-    def __init__(self, name, image, tile, level, menu, adds_hunger = 20):
-        menu = menu + 'This ' + name + 'adds' + adds_hunger + 'hunger'
-        tem.__init__(self, name, image, tile, menu, 
+    def __init__(self, name, image, tile, menu, adds_hunger = 20):
+        menu = [menu, 'This ' + name + ' gives you ' + str(adds_hunger) + ' hunger.']
+        Item.__init__(self, name, image, tile, menu,
                 {'Drop':self.Drop, 'Eat':self.Eat})
         self.adds_hunger = adds_hunger
         self.inv_type = 'all'
@@ -34,6 +36,47 @@ class Food(Item):
         self.delete_from_inventory()
         print('You ate the ', self.name, ' and it gave you ', player.hunger - now_hunger, ' hunger')#to log
         
+class Potion(Item):
+    def __init__(self, name, image, tile, menu, effect = 'Weak_Healing'):
+        Item.__init__(self, name, image, tile, menu,
+                      {'Drop':self.Drop, 'Drink':self.Drink})
+        self.inv_type = 'alchemy'
+        self.effect = effect
+
+    def Drink(self):
+        effect_dict = {'Weak_Healing':self.WeakHeal,
+                       'Strong_Healing':self.StrongHeal,'Strength_Addition':self.StrengthIncrease}#... more will be added
+        for effect_name, effect in effect_dict.items():
+            if self.effect == effect_name:
+                effect_dict[self.effect]()
+                self.delete_from_inventory()
+
+    def WeakHeal(self):
+        inv_layer = self.inv_layer
+        player = inv_layer.play_layer.player
+        now_health = player.health
+        player.health += player.max_health/4
+        player.health = int(player.health)
+        if player.health > player.max_health:
+            player.health = player.max_health
+        print('You were healed by ', player.max_health - now_health, ' health!')
+
+    def StrongHeal(self):
+        inv_layer = self.inv_layer
+        player = inv_layer.play_layer.player
+        player.health = player.max_health
+        player.hunger = player.max_hunger
+        player.blood_thirst = player.max_blood_thirst
+        player.gold_hunger = player.max_gold_hunger
+        print('You were fully healed! You are no longer hungry for anything!')
+
+    def StrengthIncrease(self):
+        inv_layer = self.inv_layer
+        player = inv_layer.play_layer.player
+        player.strength += 3
+        print('Your strength was increased.')
+        
+ 
 
 class LevelKey(Item):
     def __init__(self, name, image, tile, level):

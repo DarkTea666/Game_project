@@ -6,6 +6,7 @@ from cocos.batch import BatchNode
 from cocos.text import RichLabel
 
 from item_menu_layer import ItemMenuLayer
+ 
 
 class EquipedLayer(Layer):
     is_event_handler = True
@@ -31,6 +32,46 @@ class EquipedLayer(Layer):
         self.selecter.opacity = 0
         self.add(self.selecter)
 
+        self.health_bar = Sprite('Sprites/Bar_health.png')
+        self.hunger_bar = Sprite('Sprites/Bar_hunger.png')
+        self.gold_hunger_bar = Sprite('Sprites/Tavern_floor.png')
+        self.blood_thirst_bar = Sprite('Sprites/Tavern_floor.png')
+        self.health_icon = Sprite('Sprites/Icon_health.png')
+        self.hunger_icon = Sprite('Sprites/Icon_food.png')
+        self.gold_hunger_icon = Sprite('Sprites/Tavern_floor.png')
+        self.blood_thirst_icon = Sprite('Sprites/Tavern_floor.png')
+
+        self.death_label = RichLabel('You Died!', (375, 400), font_size = 80)
+        self.death_label.opacity = 0
+        self.add(self.death_label)
+
+ 
+    def update_bars(self, first_time = False):       #TODO: draw the icons and bars(icons -- 1024x1024, bars -- long,normal-sized
+        player = self.inv_layer.play_layer.player
+        self.inf_bars = {'health_bar':{'bar':self.health_bar, 'player':player.health,
+                                       'max':player.max_health, 'icon':self.health_icon},
+                         'hunger_bar':{'bar':self.hunger_bar, 'player':player.hunger,
+                                       'max':player.max_hunger, 'icon':self.hunger_icon},
+                         'gold_hunger_bar':{'bar':self.gold_hunger_bar, 'player':player.gold_hunger,
+                                       'max':player.max_gold_hunger, 'icon':self.gold_hunger_icon}, 
+                         'blood_thirst_bar':{'bar':self.blood_thirst_bar, 'player':player.blood_thirst,
+                                       'max':player.max_blood_thirst,  'icon':self.blood_thirst_icon}  }
+        initial_y = 760
+        always_x = 650
+        for bar_name, bar_inf in self.inf_bars.items():
+            if bar_inf['player'] != 'none':
+                if first_time:
+                    self.add(bar_inf['bar'])
+                    bar_inf['bar'].position = always_x, initial_y
+                    bar_inf['bar'].scale = 0.05
+                    
+                    self.add(bar_inf['icon'])
+                    bar_inf['icon'].position = always_x-60, initial_y
+                    bar_inf['icon'].scale = 0.05
+                    initial_y -= 53
+                
+                bar_inf['bar'].scale_x = bar_inf['player'] / bar_inf['max']
+
     def visualise_equiped_items(self):
         self.equipment_dict = {'weapon': [False, Sprite('Sprites/Weapon_empty_slot.png'), 760],
                                'armour': [False, Sprite('Sprites/Armour_empty_slot.png'), 680],
@@ -49,6 +90,7 @@ class EquipedLayer(Layer):
 
     def update_player_information(self):
         player = self.inv_layer.play_layer.player
+        player.update_damage()
         self.all_info = {'health':[int(player.health),'/',player.max_health],
                      'strength':[player.strength],
                      'damage':[int(player.damage)],
@@ -105,6 +147,9 @@ class EquipedLayer(Layer):
         if not equip_key:
             return False
             print("You don't have enough space to equip this item")
+        player = self.inv_layer.play_layer.player
+        player.update_damage()
+        
 
     def on_mouse_press(self,x,y,buttons,modifiers):
         not_press = True
@@ -141,6 +186,8 @@ class EquipedLayer(Layer):
                 self.visualise_player_information(de_vis=True)
                 self.stats_visible = False
 
+    def show_death_label(self):
+        self.death_label.opacity = 255
 
 
 

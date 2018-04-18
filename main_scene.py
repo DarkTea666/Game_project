@@ -47,6 +47,7 @@ class PlayScene(Scene):
 
             interactive_layer = InteractableLayer(map_layer, subj1=self.player, subj2=play_layer)
             play_layer.interactive_layer = interactive_layer
+
         
         else:
             if self.level == 1: #later level == 0
@@ -70,7 +71,16 @@ class PlayScene(Scene):
             play_layer.interactive_layer = interactive_layer
             play_layer.spawn_items()#for now, will later be done by interact_layer
 
-        
+        for inv_name, inv_type in inventory_layer.dict_inv.items():
+            for row in inv_type[0]:
+                for item in row:
+                    if item != False:
+                        item[0].inv_layer = inventory_layer
+        for place_name, place in equip_layer.equipment_dict.items():
+            if place[0] != False:
+                place[0][0].inv_layer = inventory_layer
+                print(11111111111111111111111111111111111111111111111)
+
         effect_layer = EffectLayer(map_layer)
         visibility_layer = VisibilityLayer(map_layer, subj1=play_layer, subj2=self.player)
         
@@ -90,6 +100,8 @@ class PlayScene(Scene):
         
         self.levels_visited.append(level)#later will be level 0
         print('levels_visited: ' + str(self.levels_visited))
+
+        equip_layer.update_bars(first_time = True)
 
     def position_the_player(self,map_layer,_from = None):
         if _from == None:

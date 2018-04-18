@@ -22,17 +22,28 @@ class Item(Sprite):
 
         self.inv_layer = False
 
-    def delete_from_inventory(self):
+    def delete_from_inventory(self):#TODO: fix an error that occurs when eating one bread after another if they are both in the inv
         inv_layer = self.inv_layer
+        not_key = True
         for name, inv in inv_layer.dict_inv.items():
             for row in inv[0]:
                 for item_num in range(0,3):
                     item_inf = row[item_num]
                     if item_inf != False and item_inf[0] == self:
                         remove_that = (inv[0], inv[0].index(row), item_num)
+                        not_key = False
                         break
-        inv_layer.remove(self)
-        remove_that[0][remove_that[1]][remove_that[2]] = False 
+        for name, inv in inv_layer.dict_inv.items():
+            for row in inv[0]:
+                for item_num in range(0,3):
+                    item_inf = row[item_num]
+                    if item_inf != False and item_inf[0] == self:
+                        remove_that = (inv[0], inv[0].index(row), item_num)
+                        not_key = False
+                        break
+        if not_key == False:
+            inv_layer.remove(self)
+            remove_that[0][remove_that[1]][remove_that[2]] = False 
         
 
     def Drop(self):
