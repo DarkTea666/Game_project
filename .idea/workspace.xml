@@ -5,26 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba14ea9e-842f-47a3-b3a8-ed97bcdff6bd" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/StartGame.bat" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/StartGameConference.bat" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/recuirement.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Archer_prototype.ase" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Bar_health.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Bar_hunger.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Blossom_tree_prototype.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Effect_Blue_Fireball_hit.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Forest_entrance_tile.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Forest_exit_unlocked_tile.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Gnost_mob_or_spriri_prototype.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Hell_floor.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Hell_floor_change.ase" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Icon_food.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Icon_health.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Item_Dragon_Sword.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Item_bread.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Item_green_potion.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Item_silver_red_ring.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Item_strong_red_potion.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Item_weak_red_potion.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Necromancer_NPC.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Nexromancer_NPC.ase" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Sorcerer_NPC_prototype.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Tavern_floor.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Tavern_wall.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Wizard_NPC.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Wooden_floor_prototype.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/change_ring.ase" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/food.ase" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/forest_open_exit_prototype.ase" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/map_save.db" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/create_character.py" afterPath="$PROJECT_DIR$/create_character.py" />
-      <change beforePath="$PROJECT_DIR$/create_monster.py" afterPath="$PROJECT_DIR$/create_monster.py" />
-      <change beforePath="$PROJECT_DIR$/equiped_layer.py" afterPath="$PROJECT_DIR$/equiped_layer.py" />
-      <change beforePath="$PROJECT_DIR$/interact_layer.py" afterPath="$PROJECT_DIR$/interact_layer.py" />
-      <change beforePath="$PROJECT_DIR$/inventories.py" afterPath="$PROJECT_DIR$/inventories.py" />
-      <change beforePath="$PROJECT_DIR$/item_menu_layer.py" afterPath="$PROJECT_DIR$/item_menu_layer.py" />
-      <change beforePath="$PROJECT_DIR$/items/items_base.py" afterPath="$PROJECT_DIR$/items/items_base.py" />
-      <change beforePath="$PROJECT_DIR$/items/items_misc.py" afterPath="$PROJECT_DIR$/items/items_misc.py" />
-      <change beforePath="$PROJECT_DIR$/items/items_sceptres.py" afterPath="$PROJECT_DIR$/items/items_sceptres.py" />
-      <change beforePath="$PROJECT_DIR$/items/items_weapons.py" afterPath="$PROJECT_DIR$/items/items_weapons.py" />
-      <change beforePath="$PROJECT_DIR$/main_scene.py" afterPath="$PROJECT_DIR$/main_scene.py" />
-      <change beforePath="$PROJECT_DIR$/map_generation.py" afterPath="$PROJECT_DIR$/map_generation.py" />
+      <change beforePath="$PROJECT_DIR$/Sprites/Inventory_menu.png" afterPath="$PROJECT_DIR$/Sprites/Inventory_menu.png" />
       <change beforePath="$PROJECT_DIR$/map_save.db" afterPath="$PROJECT_DIR$/map_save.db" />
-      <change beforePath="$PROJECT_DIR$/play_layer.py" afterPath="$PROJECT_DIR$/play_layer.py" />
-      <change beforePath="$PROJECT_DIR$/util/util_selecting_layer.py" afterPath="$PROJECT_DIR$/util/util_selecting_layer.py" />
-      <change beforePath="$PROJECT_DIR$/util/util_starting_stats.py" afterPath="$PROJECT_DIR$/util/util_starting_stats.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -72,20 +84,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Main_program.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Main_program.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="create_monster.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/create_monster.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
+            <state relative-caret-position="1809">
               <caret line="77" column="31" lean-forward="false" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
               <folding />
             </state>
@@ -105,18 +107,28 @@
       <file leaf-file-name="items_base.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/items/items_base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="685">
+            <state relative-caret-position="945">
               <caret line="42" column="29" lean-forward="false" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="equiped_layer.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="equiped_layer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/equiped_layer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="51" column="38" lean-forward="false" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+            <state relative-caret-position="409">
+              <caret line="48" column="69" lean-forward="false" selection-start-line="48" selection-start-column="69" selection-end-line="48" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create_character.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/create_character.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="415">
+              <caret line="82" column="39" lean-forward="true" selection-start-line="82" selection-start-column="39" selection-end-line="82" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -125,7 +137,7 @@
       <file leaf-file-name="main_scene.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_scene.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
+            <state relative-caret-position="297">
               <caret line="30" column="40" lean-forward="false" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
               <folding />
             </state>
@@ -135,7 +147,7 @@
       <file leaf-file-name="play_layer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/play_layer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
+            <state relative-caret-position="3213">
               <caret line="130" column="58" lean-forward="false" selection-start-line="130" selection-start-column="58" selection-end-line="130" selection-end-column="58" />
               <folding />
             </state>
@@ -145,7 +157,7 @@
       <file leaf-file-name="inventories.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inventories.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
+            <state relative-caret-position="1539">
               <caret line="67" column="65" lean-forward="false" selection-start-line="67" selection-start-column="65" selection-end-line="67" selection-end-column="65" />
               <folding />
             </state>
@@ -374,6 +386,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -394,6 +407,11 @@
             <path>
               <item name="Game_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Game_project" type="462c0819:PsiDirectoryNode" />
+              <item name="Sprites" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Game_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Game_project" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -404,7 +422,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -697,7 +714,14 @@
       <option name="project" value="LOCAL" />
       <updated>1523422430483</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="removed all bugs (that I know of), added potions, food, health bars, a StartGame file">
+      <created>1524057644743</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1524057644743</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -731,7 +755,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.33989072" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="196" y="374" width="1490" height="301" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35392052" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.327252" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15037593" sideWeight="0.490284" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15252417" sideWeight="0.490284" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -820,7 +844,8 @@
     <MESSAGE value="Some minor updates, more tests, player stats are now shown on screen" />
     <MESSAGE value="some non-working tests, level saves are now better, as they save each mob and tile by encoding them in json" />
     <MESSAGE value="removed all bugs (that I know of), moving between levels is established" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed all bugs (that I know of), moving between levels is established" />
+    <MESSAGE value="removed all bugs (that I know of), added potions, food, health bars, a StartGame file" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed all bugs (that I know of), added potions, food, health bars, a StartGame file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1046,21 +1071,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/create_character.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2268">
-          <caret line="96" column="41" lean-forward="false" selection-start-line="96" selection-start-column="41" selection-end-line="96" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#29#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/algorithms/algorithms_visibility.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1350">
           <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1068,9 +1082,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3726">
           <caret line="147" column="12" lean-forward="false" selection-start-line="147" selection-start-column="12" selection-end-line="147" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#31#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1078,11 +1089,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
           <caret line="23" column="9" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-          <folding>
-            <marker date="1523687931866" expanded="true" signature="1729:2046" ph="..." />
-            <marker date="1523687931866" expanded="true" signature="1960:2046" ph="..." />
-            <marker date="1523687931866" expanded="true" signature="3054:3056" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1090,7 +1096,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
           <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1098,13 +1103,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main_program.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="405">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
@@ -1137,7 +1141,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/items/items_base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="685">
+        <state relative-caret-position="945">
           <caret line="42" column="29" lean-forward="false" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
           <folding />
         </state>
@@ -1145,7 +1149,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main_scene.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
+        <state relative-caret-position="297">
           <caret line="30" column="40" lean-forward="false" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
           <folding />
         </state>
@@ -1155,15 +1159,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#29#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/play_layer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
+        <state relative-caret-position="3213">
           <caret line="130" column="58" lean-forward="false" selection-start-line="130" selection-start-column="58" selection-end-line="130" selection-end-column="58" />
           <folding />
         </state>
@@ -1171,7 +1172,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/inventories.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
+        <state relative-caret-position="1539">
           <caret line="67" column="65" lean-forward="false" selection-start-line="67" selection-start-column="65" selection-end-line="67" selection-end-column="65" />
           <folding />
         </state>
@@ -1179,7 +1180,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/create_monster.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
+        <state relative-caret-position="1809">
           <caret line="77" column="31" lean-forward="false" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
           <folding />
         </state>
@@ -1187,8 +1188,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/equiped_layer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="51" column="38" lean-forward="false" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+        <state relative-caret-position="409">
+          <caret line="48" column="69" lean-forward="false" selection-start-line="48" selection-start-column="69" selection-end-line="48" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create_character.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="82" column="39" lean-forward="true" selection-start-line="82" selection-start-column="39" selection-end-line="82" selection-end-column="39" />
           <folding />
         </state>
       </provider>
