@@ -5,37 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba14ea9e-842f-47a3-b3a8-ed97bcdff6bd" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Archer_prototype.ase" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Bar_health.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Bar_hunger.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Blossom_tree_prototype.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Effect_Blue_Fireball_hit.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Forest_entrance_tile.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Forest_exit_unlocked_tile.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Gnost_mob_or_spriri_prototype.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Hell_floor.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Hell_floor_change.ase" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Icon_food.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Icon_health.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Item_Dragon_Sword.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Item_bread.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Item_green_potion.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Item_silver_red_ring.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Item_strong_red_potion.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Item_weak_red_potion.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Necromancer_NPC.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Nexromancer_NPC.ase" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Sorcerer_NPC_prototype.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Tavern_floor.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Tavern_wall.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Wizard_NPC.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Wooden_floor_prototype.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/change_ring.ase" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/food.ase" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/forest_open_exit_prototype.ase" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/map_save.db" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Sprites/Arrow_pointer.ase" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Sprites/Inventory_menu.png" afterPath="$PROJECT_DIR$/Sprites/Inventory_menu.png" />
+      <change beforePath="$PROJECT_DIR$/equiped_layer.py" afterPath="$PROJECT_DIR$/equiped_layer.py" />
       <change beforePath="$PROJECT_DIR$/map_save.db" afterPath="$PROJECT_DIR$/map_save.db" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,7 +25,7 @@
     <SUITE FILE_PATH="coverage/Game_project$play_layer.coverage" NAME="play_layer Coverage Results" MODIFIED="1518794120184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Game_project$Unittests_for_tests_visibility_VisibilityTests_test_distance2.coverage" NAME="Unittests for tests_visibility.VisibilityTests.test_distance2 Coverage Results" MODIFIED="1518794227791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Game_project$create_monster.coverage" NAME="create_monster Coverage Results" MODIFIED="1518794853814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Game_project$Main_program.coverage" NAME="Main_program Coverage Results" MODIFIED="1524057470714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Game_project$Main_program.coverage" NAME="Main_program Coverage Results" MODIFIED="1524159831290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Game_project$working_prototype.coverage" NAME="working_prototype Coverage Results" MODIFIED="1517664430028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Game_project$tests.coverage" NAME="tests Coverage Results" MODIFIED="1517926529812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Game_project$tests_visibility.coverage" NAME="tests_visibility Coverage Results" MODIFIED="1518525263426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
@@ -117,18 +89,28 @@
       <file leaf-file-name="equiped_layer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/equiped_layer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="48" column="69" lean-forward="false" selection-start-line="48" selection-start-column="69" selection-end-line="48" selection-end-column="69" />
+            <state relative-caret-position="211">
+              <caret line="72" column="67" lean-forward="false" selection-start-line="72" selection-start-column="67" selection-end-line="72" selection-end-column="67" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_character.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main_program.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Main_program.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create_character.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/create_character.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="82" column="39" lean-forward="true" selection-start-line="82" selection-start-column="39" selection-end-line="82" selection-end-column="39" />
+            <state relative-caret-position="1890">
+              <caret line="82" column="39" lean-forward="false" selection-start-line="82" selection-start-column="39" selection-end-line="82" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -159,16 +141,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1539">
               <caret line="67" column="65" lean-forward="false" selection-start-line="67" selection-start-column="65" selection-end-line="67" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StartGame.bat" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/StartGame.bat">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="1" column="20" lean-forward="false" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -721,7 +693,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524057644743</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="added the missing sprites">
+      <created>1524159775323</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1524159775323</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -755,7 +734,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.33989072" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="196" y="374" width="1490" height="301" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35392052" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.327252" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15252417" sideWeight="0.490284" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1546724" sideWeight="0.490284" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -845,7 +824,8 @@
     <MESSAGE value="some non-working tests, level saves are now better, as they save each mob and tile by encoding them in json" />
     <MESSAGE value="removed all bugs (that I know of), moving between levels is established" />
     <MESSAGE value="removed all bugs (that I know of), added potions, food, health bars, a StartGame file" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed all bugs (that I know of), added potions, food, health bars, a StartGame file" />
+    <MESSAGE value="added the missing sprites" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the missing sprites" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1106,14 +1086,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main_program.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/StartFromSchool" />
     <entry file="file://$PROJECT_DIR$/StartGame.bat">
       <provider selected="true" editor-type-id="text-editor">
@@ -1186,18 +1158,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/equiped_layer.py">
+    <entry file="file://$PROJECT_DIR$/create_character.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="48" column="69" lean-forward="false" selection-start-line="48" selection-start-column="69" selection-end-line="48" selection-end-column="69" />
+        <state relative-caret-position="1890">
+          <caret line="82" column="39" lean-forward="false" selection-start-line="82" selection-start-column="39" selection-end-line="82" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/create_character.py">
+    <entry file="file://$PROJECT_DIR$/equiped_layer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="82" column="39" lean-forward="true" selection-start-line="82" selection-start-column="39" selection-end-line="82" selection-end-column="39" />
+        <state relative-caret-position="211">
+          <caret line="72" column="67" lean-forward="false" selection-start-line="72" selection-start-column="67" selection-end-line="72" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main_program.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>

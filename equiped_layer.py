@@ -70,7 +70,7 @@ class EquipedLayer(Layer):
                     bar_inf['icon'].scale = 0.05
                     initial_y -= 53
                 
-                bar_inf['bar'].scale_x = bar_inf['player'] / bar_inf['max']
+                bar_inf['bar'].scale_x = bar_inf['player'] / bar_inf['max']*2
 
     def visualise_equiped_items(self):
         self.equipment_dict = {'weapon': [False, Sprite('Sprites/Weapon_empty_slot.png'), 760],
